@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp">
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/episodes_cover_iv"
+        android:layout_width="101dp"
+        android:layout_height="137dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:round="6dp"
+        tools:src="@color/color_999999" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/episodes_title_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/color_333333"
+        app:font_bold="true"
+        app:layout_constraintStart_toEndOf="@id/episodes_cover_iv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/episodes_cover_iv"
+        tools:text="Am the Top Mogul" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        app:layout_constraintBottom_toBottomOf="@id/episodes_cover_iv"
+        app:layout_constraintEnd_toEndOf="@id/episodes_cover_iv"
+        android:src="@drawable/unlock_play_ic" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/play_num_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:textColor="@color/color_999999"
+        app:layout_constraintStart_toStartOf="@id/episodes_title_tv"
+        app:layout_constraintTop_toBottomOf="@id/episodes_title_tv"
+        tools:text="EP.6" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/all_episodes_num_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_999999"
+        app:layout_constraintStart_toEndOf="@id/play_num_tv"
+        app:layout_constraintTop_toTopOf="@id/play_num_tv"
+        tools:text="/EP.10" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:drawableStart="@drawable/time_ic"
+        android:drawablePadding="6dp"
+        android:textColor="@color/color_DBDBDB"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/episodes_title_tv"
+        app:layout_constraintTop_toBottomOf="@id/play_num_tv"
+        tools:text="Today" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

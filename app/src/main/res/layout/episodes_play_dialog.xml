@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hjq.shape.layout.ShapeConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="527dp"
+    android:layout_gravity="bottom"
+    app:shape_radiusInTopLeft="20dp"
+    app:shape_radiusInTopRight="20dp"
+    app:shape_solidColor="@color/color_232323">
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/episodes_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:drawableStart="@drawable/episodes_dialog_ic"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Am the Top Mogul" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/ep_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/episodes_title_tv"
+        app:layout_constraintTop_toBottomOf="@id/episodes_title_tv"
+        tools:text="EP.80 in total  •" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/playback_quantity_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:drawableStart="@drawable/playback_quantity_ic"
+        android:drawablePadding="2dp"
+        android:textColor="@color/white"
+        android:layout_marginStart="6dp"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/ep_tv"
+        app:layout_constraintStart_toEndOf="@id/ep_tv"
+        app:layout_constraintTop_toTopOf="@id/ep_tv"
+        tools:text="1.5k" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/arrow_bottom_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:padding="10dp"
+        android:src="@drawable/arrow_bottom_ic"
+        app:layout_constraintBottom_toBottomOf="@id/episodes_title_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/episodes_title_tv" />
+
+     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/number_episodes_rv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ep_tv"
+        tools:listitem="@layout/number_episodes_item" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/episodes_rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="20dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/number_episodes_rv"
+        app:spanCount="5"
+        tools:listitem="@layout/episodes_dialog_item" />
+
+</com.hjq.shape.layout.ShapeConstraintLayout>

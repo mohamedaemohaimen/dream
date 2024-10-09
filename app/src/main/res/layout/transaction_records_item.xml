@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="90dp"
+    android:paddingHorizontal="16dp">
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/records_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="46dp"
+        android:textColor="@color/color_351F51"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/variable_quantity_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Recharge-1800 Coins" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/records_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="18dp"
+        android:textColor="@color/color_999999"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/line"
+        app:layout_constraintTop_toBottomOf="@id/records_title"
+        tools:text="2023/12/03" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/variable_quantity_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="43dp"
+        android:textColor="@color/color_C640FF"
+        android:textSize="12sp"
+        app:font_bold="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="+1800" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_F3F3F3"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

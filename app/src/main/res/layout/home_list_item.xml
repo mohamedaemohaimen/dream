@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="15dp">
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_18"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Popular" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/more_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/more"
+        android:paddingVertical="5dp"
+        android:drawableEnd="@drawable/arrow_right_more_rtl_ic"
+        android:drawablePadding="6dp"
+        android:textColor="@color/color_878787"
+        android:textSize="14sp"
+        tools:visibility="visible"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/title_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/title_tv" />
+
+    <com.tt.dramatime.widget.SlideBottomMonitorRecycleView
+        android:id="@+id/episodes_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@id/title_tv" />
+
+    <Space
+        android:id="@+id/space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/episodes_rv"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

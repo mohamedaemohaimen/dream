@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/episodes_ll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp">
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/poster_iv"
+        android:layout_width="@dimen/dp_104"
+        android:layout_height="@dimen/dp_142"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:round="6dp"
+        tools:src="@color/color_999999" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/label_iv"
+        android:layout_width="100dp"
+        android:layout_height="14dp"
+        android:layout_gravity="end"
+        android:scaleType="fitEnd"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/poster_iv"
+        app:layout_constraintTop_toTopOf="@id/poster_iv"
+        tools:src="@drawable/red_label_rtl_bg"
+        tools:visibility="visible" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/title_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_13"
+        android:ellipsize="end"
+        android:lineSpacingMultiplier="1.1"
+        android:maxLines="2"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_15"
+        app:font_bold="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/poster_iv"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Misplaced Love of what balalall balabal balalall balabalbalalall balabalbalalall balabalbalalall balabalbalalall balabalbalalall balabalbalalall balabal" />
+
+    <com.tt.dramatime.widget.flowlayout.TagFlowLayout
+        android:id="@+id/ep_tag"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        app:auto_select_effect="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/title_tv"
+        app:layout_constraintTop_toBottomOf="@id/title_tv" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/introduce_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lineSpacingMultiplier="1.1"
+        android:maxLines="3"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/title_tv"
+        app:layout_constraintTop_toBottomOf="@id/ep_tag"
+        tools:text="Misplaced Love of what bala lal bala Mispl Love of Misplaced Love Misplaced Love ...Misplaced Love of what bala lal bala Mispla Love of Misced Love Misplaced Love " />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/ep_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_3"
+        android:ellipsize="end"
+        android:textColor="@color/color_666666"
+        android:textSize="@dimen/sp_12"
+        app:font_bold="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/title_tv"
+        tools:text="EP.80" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/source_gp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="source_tv,third_sources_iv" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/source_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_6"
+        android:text="@string/play_source"
+        android:textColor="@color/color_666666"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@id/ep_tv"
+        app:layout_constraintEnd_toStartOf="@id/third_sources_iv" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/third_sources_iv"
+        android:layout_width="@dimen/dp_12"
+        android:layout_height="@dimen/dp_12"
+        android:background="@color/red"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@id/source_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/source_tv"
+        app:round="@dimen/dp_3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

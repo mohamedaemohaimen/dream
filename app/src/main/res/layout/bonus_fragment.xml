@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <com.tt.widget.layout.RatioFrameLayout
+                android:id="@+id/check_in_bonus_fl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bonus_rtl_bg"
+                app:layout_constraintTop_toTopOf="parent"
+                app:sizeRatio="375:438" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/check_in_gp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="bonuses_tv,bonuses_text_tv,check_in_fl"
+                tools:visibility="visible" />
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:id="@+id/bonuses_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_9732F5"
+                android:textSize="39sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/bonuses_text_tv"
+                app:layout_constraintStart_toStartOf="@id/bonuses_text_tv"
+                tools:text="30" />
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:id="@+id/bonuses_text_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="@string/bonuses"
+                android:textColor="@color/color_6B6B6B"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@id/check_in_fl"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="59dp"
+                android:layout_marginEnd="22dp"
+                android:padding="5dp"
+                android:src="@drawable/bonus_rules_ic"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.tt.widget.layout.RatioFrameLayout
+                android:id="@+id/check_in_fl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginHorizontal="3dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/bonus_check_in_rtl_bg"
+                app:layout_constraintBottom_toBottomOf="@id/check_in_bonus_fl"
+                app:sizeRatio="369:264">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/check_in_ll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="21dp"
+                        android:layout_marginTop="21dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.tt.dramatime.widget.fonttext.FontTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/checked_in_for"
+                            android:textColor="@color/color_6B6B6B"
+                            android:textSize="16sp"
+                            app:font_bold="true" />
+
+                        <com.tt.dramatime.widget.fonttext.FontTextView
+                            android:id="@+id/check_in_day_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="8dp"
+                            android:text="0"
+                            android:textColor="@color/color_9732F5"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <com.tt.dramatime.widget.fonttext.FontTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/days"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            app:font_bold="true" />
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/check_in_rv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_26"
+                        android:orientation="horizontal"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="0dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/check_in_ll"
+                        tools:itemCount="7"
+                        tools:listitem="@layout/bonus_check_in_item" />
+
+                    <com.hjq.shape.layout.ShapeLinearLayout
+                        android:id="@+id/check_in_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_45"
+                        android:layout_marginHorizontal="25dp"
+                        android:layout_marginBottom="32dp"
+                        android:gravity="center"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:shape_radius="42dp"
+                        app:shape_solidGradientEndColor="@color/color_C640FF"
+                        app:shape_solidGradientStartColor="@color/color_23E1FF">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/reminder_iv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="13dp"
+                            android:scaleType="fitXY"
+                            android:visibility="gone"
+                            tools:src="@drawable/bonus_ad_ic"
+                            tools:visibility="visible" />
+
+                        <com.tt.dramatime.widget.fonttext.FontTextView
+                            android:id="@+id/check_in_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/check_in"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            app:font_bold="true"
+                            app:layout_constraintBottom_toBottomOf="parent" />
+                    </com.hjq.shape.layout.ShapeLinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.tt.widget.layout.RatioFrameLayout>
+
+            <com.tt.widget.layout.RatioFrameLayout
+                android:id="@+id/gift_fl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="6dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/check_in_fl"
+                app:sizeRatio="351:75">
+
+                <androidx.constraintlayout.utils.widget.ImageFilterView
+                    android:id="@+id/gift_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_EDEDED"
+                    app:round="12dp" />
+            </com.tt.widget.layout.RatioFrameLayout>
+
+            <!--,gift_fl-->
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/task_gp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="complete_tasks_tv,tasks_rv"
+                tools:visibility="visible" />
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:id="@+id/complete_tasks_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/complete_tasks"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:font_bold="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/gift_fl" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/tasks_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingHorizontal="12dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/complete_tasks_tv"
+                tools:itemCount="5"
+                tools:listitem="@layout/bonus_task_item" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/operation_btn"
+        android:layout_width="99dp"
+        android:layout_height="38dp"
+        android:layout_gravity="center"
+        android:background="@drawable/button_middle_38_bg"
+        android:gravity="center"
+        android:text="@string/retry"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:visibility="gone" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/movie_loading_lav"
+        android:layout_width="51dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/head_refresh" />
+
+</FrameLayout>

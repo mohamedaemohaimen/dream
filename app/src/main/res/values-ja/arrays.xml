@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="report_content">
+        <item>著作権侵害</item>
+        <item>内容がごちゃごちゃです</item>
+        <item>法律違反</item>
+        <item>ポルノ</item>
+        <item>その他の理由</item>
+    </string-array>
+
+
+</resources>

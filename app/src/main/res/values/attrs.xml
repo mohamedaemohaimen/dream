@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 自定义 字体 TextView -->
+    <declare-styleable name="FontTextView">
+
+        <attr name="font_type" format="integer">
+            <enum name="defaultFont" value="0" />
+            <enum name="din_bold" value="1" />
+            <enum name="din_medium" value="2" />
+            <enum name="din_regular" value="3" />
+            <enum name="sf_heavy" value="4" />
+        </attr>
+
+        <attr name="use_strike_thru_text" format="boolean" />
+        <attr name="font_bold" format="boolean" />
+        <attr name="font_bold_pro" format="boolean" />
+    </declare-styleable>
+
+    <!-- 自定义 字体 TextView -->
+    <declare-styleable name="FontEditText">
+        <attr name="font_edit_bold" format="boolean" />
+    </declare-styleable>
+
+    <!-- 自定义 字体 TextView -->
+    <declare-styleable name="RemovePaddingTextView">
+
+        <attr name="remove_default_padding" format="boolean" />
+
+    </declare-styleable>
+
+    <!-- 继承 ShapeTextView 、 加入自定义功能 -->
+    <declare-styleable name="MyShapeTextView">
+        <attr name="stv_font_type" format="integer">
+            <enum name="defaultFont" value="0" />
+            <enum name="helvetica" value="2" />
+            <enum name="divination" value="3" />
+            <enum name="din_bold" value="4" />
+            <enum name="din_medium" value="5" />
+            <enum name="gift" value="6" />
+            <enum name="helvetica_lt" value="7" />
+            <enum name="tt0144m" value="8" />
+        </attr>
+        <attr name="stv_strike_thru_text" format="boolean" /> <!-- 中划线 -->
+        <attr name="stv_font_bold" format="boolean" />
+    </declare-styleable>
+
+    <!--TagFlowLayout-->
+    <declare-styleable name="TagFlowLayout">
+        <attr name="auto_select_effect" format="boolean" />
+        <attr name="max_select" format="integer" />
+        <!--必选判断 开启后 选中后不能取消 仅在max_select=1适用-->
+        <attr name="required" format="boolean" />
+        <!--默认选中 开启后默认选中第一项-->
+        <attr name="default_selection" format="boolean" />
+        <attr name="gravity">
+            <enum name="left" value="-1" />
+            <enum name="center" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="BallPulseFooter">
+        <attr name="srlClassicsSpinnerStyle"/>
+        <attr name="srlAnimatingColor" format="color"/>
+        <attr name="srlNormalColor" format="color"/>
+    </declare-styleable>
+
+</resources>

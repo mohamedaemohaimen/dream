@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "858141055830",
+    "project_id": "dramatime",
+    "storage_bucket": "dramatime.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:858141055830:android:3cdc4ac7ec9a91785514f7",
+        "android_client_info": {
+          "package_name": "com.tt.dramatime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "858141055830-o11dphd6rvjt6su1bn2t32j29g64mn1l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tt.dramatime",
+            "certificate_hash": "1048ca307690be87f3267cb28b9af43a9e3e0b30"
+          }
+        },
+        {
+          "client_id": "858141055830-ra51gk4412s7uaov8rlvo683c5frk1kk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tt.dramatime",
+            "certificate_hash": "c5c704cf598ce820bc99dd02b8ee8c7e7698a958"
+          }
+        },
+        {
+          "client_id": "858141055830-9f8lhir12sqi6uf5l8qepjflj236ldo9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2LQoPj3LZsJRI18oK3j8MetJTa_osme8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "858141055830-9f8lhir12sqi6uf5l8qepjflj236ldo9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "858141055830-b09qngj7lhoc3b11ap9820qac1r5jjou.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tt.dramatime",
+                "app_store_id": "6479010395"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

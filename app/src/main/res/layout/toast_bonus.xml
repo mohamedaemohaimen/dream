@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hjq.shape.layout.ShapeLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="111dp"
+    android:gravity="center_horizontal"
+    android:maxWidth="213dp"
+    android:minWidth="157dp"
+    android:orientation="vertical"
+    android:paddingTop="16dp"
+    android:paddingBottom="13dp"
+    app:shape_radius="8dp"
+    app:shape_solidColor="@color/black70">
+
+    <ImageView
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:src="@drawable/wallet_coins_ic" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="23dp"
+        android:layout_marginTop="13dp">
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@android:id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxWidth="183dp"
+            android:textColor="@color/color_F5813E"
+            android:textSize="22sp"
+            app:font_bold="true"
+            tools:text="+10" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:text="@string/home_nav_bonus"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:font_bold="true" />
+    </LinearLayout>
+
+
+</com.hjq.shape.layout.ShapeLinearLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/add_coin_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/add_coin_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:background="@drawable/ad_add_coin_bg"
+        android:gravity="center_horizontal"
+        android:paddingHorizontal="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/add_coin_iv"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="3.5dp"
+            tools:src="@drawable/coins_54_ic" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/add_bonus_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="1dp"
+            tools:text="+10" />
+    </LinearLayout>
+
+    <com.hjq.shape.view.ShapeView
+        android:id="@+id/round_view"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_coin_ll"
+        app:shape_radius="50dp"
+        app:shape_solidColor="@color/color_E8E8EC" />
+
+    <com.hjq.shape.view.ShapeView
+        android:id="@+id/line_view"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        app:layout_constraintBottom_toBottomOf="@id/round_view"
+        app:layout_constraintTop_toTopOf="@id/round_view"
+        app:shape_radius="1dp"
+        app:shape_solidColor="@color/color_E8E8EC" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/task_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/round_view"
+        tools:text="1 Ads" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

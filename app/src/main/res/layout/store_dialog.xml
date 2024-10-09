@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hjq.shape.layout.ShapeConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:shape_radiusInTopLeft="20dp"
+    app:shape_radiusInTopRight="20dp"
+    app:shape_solidColor="@color/color_232323">
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/recharge_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/please_recharge"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:font_bold="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/store_include"
+        layout="@layout/store_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="9dp"
+        app:layout_constraintBottom_toTopOf="@id/view_more_tv"
+        app:layout_constraintTop_toBottomOf="@id/recharge_hint" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/arrow_bottom_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="6dp"
+        android:padding="10dp"
+        android:src="@drawable/arrow_bottom_ic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/view_more_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="15dp"
+        android:drawablePadding="6dp"
+        android:text="@string/view_more"
+        android:textColor="@color/color_999999"
+        app:layout_constraintBottom_toTopOf="@id/auto_play_ll"
+        app:layout_constraintEnd_toStartOf="@id/view_more_iv" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/view_more_iv"
+        android:layout_width="8dp"
+        android:layout_height="12dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/arrow_right_ic"
+        app:layout_constraintBottom_toBottomOf="@id/view_more_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/view_more_tv" />
+
+    <LinearLayout
+        android:id="@+id/auto_play_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="34dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginEnd="10dp"
+            app:buttonCompat="@drawable/checkbox_selector"
+            app:layout_constraintBottom_toBottomOf="@id/auto_play_tv"
+            app:layout_constraintEnd_toStartOf="@id/auto_play_tv"
+            app:layout_constraintTop_toTopOf="@id/auto_play_tv" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/auto_play_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/automatically_unlock"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
+
+
+</com.hjq.shape.layout.ShapeConstraintLayout>

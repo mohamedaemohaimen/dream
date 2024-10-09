@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Space
+        android:id="@+id/start_sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="11dp"
+        android:textSize="13sp"
+        android:textColor="@color/color_999999"
+        android:visibility="gone"
+        android:layout_marginTop="13dp"
+        android:layout_centerHorizontal="true"
+        android:text="17:21" />
+
+    <com.tt.dramatime.widget.fonttext.MyShapeTextView
+        android:id="@+id/text_msg_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/time_tv"
+        android:layout_marginTop="7dp"
+        android:gravity="center_vertical"
+        android:layout_alignStart="@id/start_sp"
+        android:layout_alignEnd="@id/end_sp"
+        android:layout_marginHorizontal="16dp"
+        android:maxWidth="238dp"
+        android:minHeight="40dp"
+        android:paddingHorizontal="18dp"
+        android:layout_marginBottom="11dp"
+        android:paddingVertical="10dp"
+        android:text="Hello,what can I do for you? yes i do"
+        app:layout_constraintEnd_toEndOf="@id/end_sp"
+        app:layout_constraintStart_toStartOf="@id/start_sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shape_radius="10dp"
+        app:shape_solidColor="@color/white" />
+
+    <Space
+        android:id="@+id/end_sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</RelativeLayout>

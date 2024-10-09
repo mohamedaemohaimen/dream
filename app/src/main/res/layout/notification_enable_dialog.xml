@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hjq.shape.layout.ShapeLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="257dp"
+    android:layout_gravity="bottom"
+    android:orientation="vertical"
+    app:shape_radiusInTopLeft="31dp"
+    app:shape_radiusInTopRight="31dp"
+    app:shape_solidColor="@color/white">
+
+    <com.hjq.shape.layout.ShapeConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="172dp"
+        app:shape_radiusInTopLeft="31dp"
+        app:shape_radiusInTopRight="31dp"
+        app:shape_solidGradientEndColor="@color/color_EEC5FF"
+        app:shape_solidGradientStartColor="@color/color_D5F9FF">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="341dp"
+            android:layout_height="109dp"
+            android:src="@drawable/push_enable_ic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/close_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="15dp"
+            android:padding="10dp"
+            android:src="@drawable/bonus_pop_close_ic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:text="Enable notification , to get 100 bonus"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </com.hjq.shape.layout.ShapeConstraintLayout>
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/enable_tv"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginHorizontal="28dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_big_45_bg"
+        android:gravity="center"
+        android:text="@string/enable"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:font_bold="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</com.hjq.shape.layout.ShapeLinearLayout>

@@ -1,0 +1,429 @@
+<resources>
+    <string name="app_name">DramaTime</string>
+
+    <!--your_web_client_id-->
+    <string name="web_client_id" translatable="false">858141055830-9f8lhir12sqi6uf5l8qepjflj236ldo9.apps.googleusercontent.com</string>
+    <!-- Facebook application ID and custom URL scheme (app ID prefixed by 'fb'). -->
+    <string name="facebook_app_id" translatable="false">1451335392425640</string>
+    <!--<string name="facebook_login_protocol_scheme" translatable="false">fb1451335392425640</string>-->
+    <string name="facebook_client_token" translatable="false">3fe7a7f707d39c403ef5bc6815d9885a</string>
+
+    <!-- 通用的 -->
+    <string name="common_video_error_not_support">该视频不适合在此设备上播放</string>
+    <string name="common_video_error_unknown">无法播放此视频</string>
+    <string name="common_video_error_supplement">错误类型：%d，错误代码：%d</string>
+
+    <string name="common_web_ssl_error_title">当前网站安全证书已过期或不可信\n是否继续浏览</string>
+    <string name="common_web_ssl_error_allow">继续浏览</string>
+    <string name="common_web_ssl_error_reject">返回上一页</string>
+
+    <string name="common_web_location_permission_title">当前网站需要获取您的地理位置</string>
+    <string name="common_web_location_permission_allow">授予</string>
+    <string name="common_web_location_permission_reject">拒绝</string>
+
+    <string name="common_web_call_phone_title">当前号码 %s</string>
+    <string name="common_web_call_phone_allow">拨打</string>
+    <string name="common_web_call_phone_reject">取消</string>
+
+    <!-- 选择对话框 -->
+    <string name="select_min_hint">至少要选择 %d 项</string>
+    <string name="select_max_hint">最多只能选择 %d 项</string>
+
+    <!-- 图片选择 -->
+    <string name="image_select_title">图片选择</string>
+    <string name="image_select_all">所有图片</string>
+    <string name="image_select_total">共 %d 张</string>
+    <string name="image_select_max_hint">本次最多只能选择 %d 张图片</string>
+    <string name="image_select_error">无法选中，该图片已经被删除</string>
+
+    <!-- 裁剪图片 -->
+    <string name="image_crop_error_not_support">裁剪失败，当前手机不支持裁剪图片</string>
+
+    <!-- 视频选择 -->
+    <string name="video_select_title">视频选择</string>
+    <string name="video_select_all">所有视频</string>
+    <string name="video_select_total">共 %d 个</string>
+    <string name="video_select_max_hint">本次最多只能选择 %d 个视频</string>
+    <string name="video_select_error">无法选中，该视频已经被删除</string>
+
+    <!-- 拍照和拍摄 -->
+    <string name="camera_launch_fail">无法启动相机</string>
+    <string name="camera_image_error">目标地址错误</string>
+
+    <!-- 网络请求 -->
+    <!--请求出错，未知错误-->
+    <string name="http_unknown_error">Request error, unknown error</string>
+    <!--登录失效，请重新登录-->
+    <string name="http_token_error">Login failed, please log in again</string>
+    <!--数据解析异常，请稍后-->
+    <string name="http_data_explain_error">Data parsing exception, please wait</string>
+    <!--服务器请求超时，请稍后再试-->
+    <string name="http_server_out_time">Server request timeout, please try again later</string>
+    <!--请求失败，请检查网络设置-->
+    <string name="http_network_error">Request failed, please check network settings</string>
+    <!--服务器响应异常，请稍后再试-->
+    <string name="http_response_error">The server response is abnormal. Please try again later</string>
+    <!--服务器连接异常，请稍后再试-->
+    <string name="http_server_error">The server connection is abnormal. Please try again later</string>
+    <!--请求被中断，请重试-->
+    <string name="http_request_cancel">The request was interrupted, please try again</string>
+    <string name="http_response_null_body">Server data returned abnormal, please try again later</string>
+    <string name="http_response_md5_error">Download failed, file md5 verification failed</string>
+    <string name="http_repeat_submit">Repeat submit is not allowed, please try again later</string>
+
+    <string name="common_loading">Loading&#8230;</string>
+
+    <string name="common_unknown_error">UnknownError</string>
+
+    <string name="common_confirm">Confirm</string>
+    <string name="common_cancel">Cancel</string>
+
+    <string name="common_crash_hint">The application encountered a minor accident and is currently being restarted</string>
+
+    <string name="common_network_error">The current network is unavailable, please check the network settings</string>
+
+    <string name="common_step_next">Next step</string>
+    <string name="common_step_complete">Complete</string>
+    <string name="common_step_commit">Submit</string>
+
+    <string name="common_permission_alert">Authorization reminder</string>
+    <string name="common_permission_fail_1">Authorization failed, please grant permissions correctly</string>
+    <string name="common_permission_fail_2">Failed to obtain permissions, please grant permissions manually</string>
+    <string name="common_permission_fail_3">Failed to obtain permissions, please grant manually%s</string>
+    <string name="common_permission_fail_4">No backend location permission has been granted. Please select "Always allow"</string>
+    <string name="common_permission_goto">Go to Authorization</string>
+
+    <string name="common_permission_calendar">Calendar permissions</string>
+    <string name="common_permission_camera">Camera permissions</string>
+    <string name="common_permission_contacts">Address book permissions</string>
+    <string name="common_permission_location">Location permissions</string>
+    <string name="common_permission_location_background">Background positioning permissions</string>
+    <string name="common_permission_microphone">Microphone permissions</string>
+    <string name="common_permission_phone">Telephone permissions</string>
+    <string name="common_permission_call_log">Call log permissions</string>
+    <string name="common_permission_sensors">Body sensor permissions</string>
+    <string name="common_permission_activity_recognition">Fitness Exercise Permissions</string>
+    <string name="common_permission_sms">SMS permissions</string>
+    <string name="common_permission_storage">Storage permissions</string>
+
+    <string name="common_permission_install">Install application permissions</string>
+    <string name="common_permission_notification">Notification Bar Permissions</string>
+    <string name="common_permission_window">Suspended window permissions</string>
+    <string name="common_permission_setting">System Setting Permissions</string>
+
+    <string name="common_network_hint">There is currently no network connection, please check your network settings</string>
+    <string name="common_no_more_data">There\'s no more data left</string>
+
+    <!-- 状态布局 -->
+    <string name="status_layout_no_data">Empty and empty</string>
+    <string name="status_layout_error_request">Request error, please try again</string>
+    <string name="status_layout_error_network">Network error, please try again</string>
+    <string name="status_layout_retry">Retry</string>
+
+    <!--版本升级-->
+    <string name="update_status_start">Downloading</string>
+    <string name="update_status_running">Downloading %d%%</string>
+    <string name="update_status_successful">Download completed, click on install</string>
+    <string name="update_status_failed">Download failed, click retry</string>
+    <string name="update_notification_channel_id">update</string>
+    <string name="update_notification_channel_name">Upgrade Notification</string>
+
+    <!-- 浏览器 -->
+    <string name="web_title">Web page loading&#8230;</string>
+
+    <!-- 列表 没有数据的两种情况 -->
+    <string name="text_empty_network_error">Connection error.\nPlease check your connection and try again.</string>
+    <string name="text_empty_no_data">There is currently no data available</string>
+
+    <string name="load_failed">Loading failed, click retry</string>
+    <string name="load_end">You have Scrolled to the bottom</string>
+    <string name="load_complete">Click to load more</string>
+
+    <!--弹窗-->
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+
+    <!-- 首页 -->
+    <string name="home_nav_index">Home</string>
+    <string name="home_nav_index_top">BackTop</string>
+    <string name="home_nav_mylist">My List</string>
+    <string name="home_nav_bonus">Bonus</string>
+    <string name="home_nav_me">Me</string>
+
+    <!--Home-->
+    <string name="coming_in">Coming in:</string>
+    <string name="play">Play</string>
+    <string name="retry">Retry</string>
+    <string name="more">More</string>
+    <string name="reserved">Reserved</string>
+    <string name="remind_me">Remind Me</string>
+    <string name="reservation_successful">Reservation successful</string>
+    <string name="cancel_reservation">Cancel reservation</string>
+    <string name="scrolled_bottom_hint">More dramas will be updated, stay tuned for surprises!</string>
+
+    <!--MyList-->
+    <string name="ep_current">EP.%d</string>
+    <string name="ep_total">/EP.%d</string>
+    <string name="no_viewing_hint">There are currently no viewing records available</string>
+    <string name="watch_more">Watch More</string>
+
+    <!--我的-->
+    <string name="sign_in">Sign in</string>
+    <string name="visitor">Visitor</string>
+    <string name="user_id">User ID :%s</string>
+    <string name="wallet">Wallet</string>
+    <string name="coins">Coins</string>
+    <string name="top_up">Top Up</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="version">Version %s</string>
+    <string name="unlock_all">Unlock All</string>
+    <string name="no_ads">No Ads</string>
+    <string name="vip_frame">VIP Frame</string>
+    <string name="weekly_vip">Weekly VIP</string>
+    <string name="monthly_vip">Monthly VIP</string>
+    <string name="annual_vip">Annual VIP</string>
+    <string name="expire_on">Expire on %s</string>
+    <string name="expired">Expired</string>
+    <string name="first_login">Get %d bonus for first login</string>
+
+    <!-- 登录 -->
+    <string name="welcome_to">Welcome to</string>
+    <string name="login_google">Sign in with Google</string>
+    <string name="login_facebook">Sign in with Facebook</string>
+    <string name="agree_privacy_policy">By continuing  you agree to the\n</string>
+    <string name="and">and</string>
+    <string name="terms_service">Terms of Service</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="renewal_agreement">Renewal Agreement</string>
+    <string name="last_login">Last login</string>
+
+    <!--钱包-->
+    <string name="recharge">Recharge</string>
+
+    <!--解锁历史-->
+    <string name="unlock_history">Unlock History</string>
+
+    <!--交易记录-->
+    <string name="transaction_history">Transaction History</string>
+
+    <!--设置-->
+    <string name="settings">Settings</string>
+    <string name="notification">Notification</string>
+    <string name="enable">Enable</string>
+    <string name="disable">Disable</string>
+    <string name="auto_unlock_next">Auto Unlock next video</string>
+    <string name="clear_cache">Clear Cache</string>
+    <string name="clear_all_cache">Clear all cache?</string>
+    <string name="dialog_continue">Continue</string>
+    <string name="dialog_clear">Clear</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="delete_account_hint">Are you sure you want to delete your account? This will permanently erase your account. And you can\'t undo this action.</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="sign_out_hint">When you sign out,your watch history will not be synced to your account.</string>
+
+    <!--语言-->
+    <string name="language">Language</string>
+    <string name="language_title">Language</string>
+    <string name="current_language">English</string>
+    <string name="language_english">English</string>
+    <string name="language_arabic">Arabic</string>
+    <string name="language_japanese">Japanese</string>
+    <string name="language_spain">Spain</string>
+    <string name="language_english_key">English</string>
+    <string name="language_arabic_key">عربي</string>
+    <string name="language_japanese_key">日本語</string>
+    <string name="language_spain_key">Español</string>
+    <string name="confirm">Confirm</string>
+
+    <!--版本更新-->
+    <string name="new_version">New Version</string>
+    <string name="update">Update</string>
+    <string name="later">Later</string>
+    <string name="an_update">An update has just been downloaded.</string>
+    <string name="restart">RESTART</string>
+
+
+    <!--开启通知-->
+    <string name="open">Open</string>
+
+    <!--举报-->
+    <string name="report">Report</string>
+    <string name="submit">Submit</string>
+    <string name="please_select_reason">Please select a reason for reporting (required)</string>
+    <string name="report_hint">Please explain your reason here,and we\'ll handle it as soon as possible</string>
+    <string name="email_address">Email address (required)</string>
+    <string name="email_address_hint">Please enter your e-mail address,and we\'ll contact you soon</string>
+    <string name="please_enter_reason">Please enter reason</string>
+    <string name="please_enter_email">Please enter e-mail</string>
+
+    <!--播放器-->
+    <string name="swipe_up">Swipe up to switch</string>
+    <string name="ep_current_total">EP.%d /EP.%d</string>
+    <string name="unlock_hint">Unlock this episode to continue watching</string>
+    <string name="unlock_paid_content">This is paid content, please unlock it</string>
+    <string name="unlock_now">Unlock Now</string>
+    <string name="watch_ads_to_unlock">Watch ads to unlock</string>
+    <string name="watch_ads_to_unlock_ep">Watch ads to unlock %deps</string>
+    <string name="watch_ads_to_unlock_num">Watch ads to unlock (%d/%d)</string>
+    <string name="watch_ads_to_unlock_ep_num">Watch ads to unlock %deps (%d/%d)</string>
+    <string name="change_num">Chances: %d</string>
+    <string name="unlimited">Unlimited</string>
+    <string name="watch_today">Watch today (%d/%d)</string>
+    <string name="balance_coins_bonus">Balance：%d Coins | %d Bonus</string>
+    <string name="speed_kbps">%d kbps</string>
+    <string name="users_are_watching">Over 90% of users are watching</string>
+    <string name="free_unlock">Free Unlock</string>
+    <string name="last_episode_hint">This is the last episode of the drama</string>
+
+    <!--剧集选择弹窗-->
+    <string name="ep_in_total">EP.%d in total</string>
+    <string name="more_excitement_hint">More excitement in the Previous ones keep watching</string>
+    <string name="plays_k">%sK</string>
+    <string name="plays_m">%sM</string>
+    <string name="free">Free</string>
+    <string name="trailer">Trailer</string>
+
+    <!--商店-->
+    <string name="store">Store</string>
+    <string name="restore">Restore</string>
+    <string name="subscriptions">Subscriptions</string>
+    <string name="balance">Balance :</string>
+    <string name="instantly">（instantly）</string>
+    <string name="obtain">Obtain</string>
+    <string name="coins_num">%s Coins</string>
+    <string name="bonus_num">%s Bonus</string>
+    <string name="add_bonus_num">+%s Bonus</string>
+    <string name="total_cycle">Total/%s</string>
+    <string name="us_money_text">US$</string>
+    <string name="us_money">US$%s</string>
+    <string name="week">Week</string>
+    <string name="month">Month</string>
+    <string name="year">Year</string>
+    <string name="y">Y</string>
+    <string name="month_m">M</string>
+    <string name="w">W</string>
+    <string name="d">d</string>
+    <string name="h">h</string>
+    <string name="m">m</string>
+    <string name="coins_bonus">%s Coins | %s Bonus</string>
+    <string name="store_need_help">Need help? Please visit</string>
+    <string name="store_feedback">Feedback</string>
+    <string name="store_hint">1.1Coins =1 Bonus,Coins &amp; Bonus can only be used within this application.
+        \n2.Payment: The purchase will be charged to your Google account.
+        \n3.Renewal: Your Google account  will be charged within 24hours before the expiration and the subscription period will be extended for another subscription cycle upon successful deduction.
+        \n4.Cancellation: To cancel the subscription renewal, please turn off the automatic renewal feature in the "Subscription"-"Manage Settings"section of Google Play at least 24 hours before the current subscription period expiration. lf canceled within the last 24 hours before expiration, a subscription fee will still be charged.
+        \n5.Payment successful but recharge not taking effect for an extended period? Click Restore or send an email to: tentoonet@gmail.com.
+    </string>
+    <string name="purchasing">Purchasing</string>
+    <string name="purchase_canceled">Purchase canceled</string>
+    <string name="purchase_failed">Purchase failed, please try again</string>
+    <string name="purchase_successful">Purchase successful</string>
+    <string name="number">%d</string>
+    <string name="weekly_vip_introduce">• Unlock All Series for Free
+        \n• Unlock VIP Exclusive Drama
+        \n• Unlock VIP Frame
+        \n• HD Streaming &amp; No Ads
+    </string>
+    <string name="first_trial">First trial, then $%s/%s</string>
+    <string name="please_recharge">Insufficient balance, please recharge</string>
+    <string name="one_time">One-time</string>
+    <string name="unlock_all_episodes">Unlock all %d episodes</string>
+    <string name="view_more">View More</string>
+    <string name="automatically_unlock">Automatically unlock the next episode</string>
+    <string name="restore_hint">An exception was detected with your order, Please click "Retry" to restore or "Contact Us"</string>
+    <string name="restore_failed_hint">Restore purchase failed, please click restore to try again.</string>
+
+    <!--充值记录-->
+    <string name="add_coins">+%d</string>
+    <string name="remove_coins">-%d</string>
+    <string name="records_hint">No records in the last 6 months</string>
+
+    <!--解锁历史-->
+    <string name="unlocked_on">Unlocked on %s</string>
+    <string name="unlocked_hint">No unlock history in the last 6 months</string>
+
+    <!--客服-->
+    <string name="please_enter">Please enter…</string>
+    <string name="send">Send</string>
+    <string name="content_hint">Please enter the content</string>
+
+    <!--播放器更多功能弹窗-->
+    <string name="share">Share</string>
+    <string name="auto_unlock">Auto Unlock</string>
+    <string name="customer_service">Customer Service</string>
+
+    <!--登录弹窗-->
+    <string name="login_hint">To safeguard your digital assets on DramaTime, we recommend purchasing coins when logged in with your Facebook,Google account</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+
+    <!--任务积分-->
+    <string name="bonuses">Bonuses</string>
+    <string name="day">Day %d</string>
+    <string name="checked_in_for">Checked-in for</string>
+    <string name="days">Days</string>
+    <string name="check_in">Check in</string>
+    <string name="check_in_tab">Check-in</string>
+    <string name="complete_tasks">Complete tasks to earn bonus</string>
+    <string name="remind_me_next_time">Remind me next time</string>
+    <string name="extra_bonus">+%d Extra Bonus</string>
+    <string name="come_back_tomorrow">Come back tomorrow</string>
+    <string name="claim">Claim</string>
+    <string name="go">Go</string>
+    <string name="check_in_successful">Check-in Successful</string>
+    <string name="add_bonus_frequency">+%d (%d/%d)</string>
+    <string name="ad_load_failed">New ad is on the way, please try again later</string>
+    <string name="video_is_loading">Video is loading</string>
+
+    <!--邮箱-->
+    <string name="enter_email">Enter your email address</string>
+    <string name="enter_email_hint">Please enter your email address</string>
+    <string name="enter_code_hint">Please enter verification code</string>
+    <string name="verification_code">verification code</string>
+    <string name="fill_in_email">Please fill in email address to stay informed about new dramas all the excitement.</string>
+    <string name="valid_email_hint">Please enter a valid email address</string>
+    <string name="verify">Verify</string>
+    <string name="resend">Resend</string>
+    <string name="linked_success">Linked Success</string>
+    <string name="verification_code_sent">Verification Code has been sent to \n%s</string>
+
+    <!--Vip过期弹窗-->
+    <string name="renew">Renew</string>
+    <string name="renew_privileges">Renew to Enjoy Privileges</string>
+
+    <!--打开通知弹窗-->
+    <string name="enable_notifications">Enable Notifications</string>
+    <string name="receive_timely_all">Receive timely\u0020 \u0020check-in bonus alerts and\u0020 \u0020new series updates！</string>
+    <string name="receive_timely">Receive timely\u0020</string>
+    <string name="check_in_bonus">\u0020check-in bonus alerts and\u0020</string>
+    <string name="allow">Allow</string>
+    <string name="not_now">Not now</string>
+
+    <!--剧折扣弹窗-->
+    <string name="limit_discounts">Limit Discounts</string>
+    <string name="limit_times">Limited Time：</string>
+    <string name="gift_pack_is_coming">Gift Pack is coming</string>
+
+    <!--搜索-->
+    <string name="search_by_title">Search by title or theme tags…</string>
+    <string name="search_popular">Popular Searches</string>
+    <string name="result">Result</string>
+    <string name="you_may_like">You May Like</string>
+    <string name="play_source">Play source:</string>
+
+    <!--广告解锁弹窗-->
+    <string name="seconds">%ds</string>
+    <string name="preparing_ads">Preparing Ads %d/%d, displaying in\u0020</string>
+    <string name="unlocked_for_free">Ep.%s is unlocked for free</string>
+    <string name="ep_for_free">%d~%d</string>
+    <string name="new_ad">New Ad is on the way, please try later</string>
+    <string name="free_unlock_chance">Congrats on\n free unlock chance</string>
+    <string name="ad_free_unlock">Ad-free unlock</string>
+
+    <!--视频目录-->
+    <string name="video_catalog">Video Catalog</string>
+    <string name="all_series">All Series</string>
+
+
+
+</resources>

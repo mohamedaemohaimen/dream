@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".ui.adapter.NavigationAdapter">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <FrameLayout
+        android:id="@+id/home_navigation_icon_fl"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_22"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_home_navigation_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_22"
+            android:scaleType="fitXY"
+            tools:srcCompat="@drawable/home_home_selector" />
+    </FrameLayout>
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/check_in_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/bonus_label_rtl_bg"
+        android:gravity="center"
+        android:maxWidth="@dimen/dp_40"
+        android:paddingHorizontal="2dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:text="@string/check_in_tab"
+        android:textColor="@color/white"
+        android:textSize="8sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SmallSp"
+        tools:visibility="visible" />
+
+    <com.hjq.shape.view.ShapeTextView
+        android:id="@+id/tv_home_navigation_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_2"
+        android:layout_marginBottom="5dp"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_navigation_icon_fl"
+        app:shape_textColor="@color/color_828282"
+        app:shape_textSelectedColor="@color/color_404040"
+        tools:text="@string/home_nav_index" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

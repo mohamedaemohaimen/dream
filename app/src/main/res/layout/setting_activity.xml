@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grey_bg"
+    android:orientation="vertical"
+    tools:context=".ui.activity.me.SettingActivity">
+
+    <com.hjq.bar.TitleBar
+        style="@style/TitleBarStyle"
+        app:title="@string/settings" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="25dp"
+            android:orientation="vertical">
+
+            <com.hjq.shape.layout.ShapeLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:shape_radius="20dp"
+                app:shape_solidColor="@color/white">
+
+                <com.tt.dramatime.widget.SettingBar
+                    android:id="@+id/notification_sb"
+                    android:layout_width="match_parent"
+                    android:layout_height="66dp"
+                    android:background="@color/transparent"
+                    app:bar_leftText="@string/notification"
+                    app:bar_lineVisible="false"
+                    app:bar_rightDrawable="@drawable/arrow_right_ic"
+                    app:bar_rightDrawablePadding="6dp" />
+
+                <com.tt.dramatime.widget.SettingBar
+                    android:id="@+id/unlock_sb"
+                    android:layout_width="match_parent"
+                    android:layout_height="66dp"
+                    android:background="@color/transparent"
+                    android:visibility="gone"
+                    app:bar_leftText="@string/auto_unlock_next"
+                    app:bar_lineVisible="false">
+
+                    <com.tt.widget.view.SwitchButton
+                        android:id="@+id/unlock_toggle_sb"
+                        android:layout_width="44dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_marginHorizontal="16dp" />
+
+                </com.tt.dramatime.widget.SettingBar>
+
+                <com.tt.dramatime.widget.SettingBar
+                    android:id="@+id/setting_cache_sb"
+                    android:layout_width="match_parent"
+                    android:layout_height="66dp"
+                    android:background="@color/transparent"
+                    app:bar_leftText="@string/clear_cache"
+                    app:bar_lineVisible="false"
+                    app:bar_rightDrawable="@drawable/arrow_right_ic"
+                    app:bar_rightDrawablePadding="6dp" />
+
+                <com.tt.dramatime.widget.SettingBar
+                    android:id="@+id/terms_service_sb"
+                    android:layout_width="match_parent"
+                    android:layout_height="66dp"
+                    android:background="@color/transparent"
+                    app:bar_leftText="@string/terms_service"
+                    app:bar_lineVisible="false"
+                    app:bar_rightDrawable="@drawable/arrow_right_ic"
+                    app:bar_rightDrawablePadding="6dp" />
+
+                <com.tt.dramatime.widget.SettingBar
+                    android:id="@+id/privacy_policy_sb"
+                    android:layout_width="match_parent"
+                    android:layout_height="66dp"
+                    android:background="@color/transparent"
+                    app:bar_leftText="@string/privacy_policy"
+                    app:bar_lineVisible="false"
+                    app:bar_rightDrawable="@drawable/arrow_right_ic"
+                    app:bar_rightDrawablePadding="6dp" />
+
+                <com.tt.dramatime.widget.SettingBar
+                    android:id="@+id/delete_account_sb"
+                    android:layout_width="match_parent"
+                    android:layout_height="66dp"
+                    android:background="@color/transparent"
+                    android:visibility="gone"
+                    app:bar_leftText="@string/delete_account"
+                    app:bar_lineVisible="false"
+                    app:bar_rightDrawable="@drawable/arrow_right_ic"
+                    app:bar_rightDrawablePadding="6dp"
+                    tools:visibility="visible" />
+            </com.hjq.shape.layout.ShapeLinearLayout>
+
+            <com.hjq.shape.layout.ShapeLinearLayout
+                android:id="@+id/sign_out_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:shape_radius="20dp"
+                app:shape_solidColor="@color/white"
+                tools:visibility="visible">
+
+                <com.tt.dramatime.widget.SettingBar
+                    android:layout_width="match_parent"
+                    android:layout_height="66dp"
+                    android:background="@color/transparent"
+                    app:bar_leftText="@string/sign_out"
+                    app:bar_lineVisible="false"
+                    app:bar_rightDrawable="@drawable/arrow_right_ic"
+                    app:bar_rightDrawablePadding="6dp" />
+
+            </com.hjq.shape.layout.ShapeLinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

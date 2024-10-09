@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="299dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/dialog_ui_round_size"
+    app:cardElevation="0px"
+    tools:context=".ui.dialog.CommonDialog">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/common_dialog_bg"
+        android:minHeight="159dp"
+        android:paddingHorizontal="22dp">
+
+        <LinearLayout
+            android:id="@+id/ll_ui_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="44dp"
+            android:paddingBottom="33dp"
+            app:layout_constraintBottom_toTopOf="@id/bottom_ll"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:id="@+id/tv_ui_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="18dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_18"
+                android:visibility="gone"
+                app:font_bold="true"
+                tools:text="标题"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottom_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:id="@+id/tv_ui_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:background="@drawable/dialog_normal_btn_bg"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="@string/cancel"
+                android:textColor="@color/color_C640FF"
+                android:textSize="14sp"
+                app:font_bold="true" />
+
+            <View
+                android:id="@+id/v_ui_line"
+                android:layout_width="15dp"
+                android:layout_height="match_parent" />
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:id="@+id/tv_ui_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_middle_38_bg"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="@string/ok"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:font_bold="true" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

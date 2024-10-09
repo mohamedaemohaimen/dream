@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grey_bg"
+    android:orientation="vertical">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/title_bar"
+        style="@style/TitleBarStyle"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        app:lineDrawable="@color/color_E5E5E5"
+        app:lineSize="1dp"
+        app:lineVisible="true"
+        app:title="@string/contact_us" />
+
+    <com.effective.android.panel.view.PanelSwitchLayout
+        android:id="@+id/panel_switch_layout"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/title_bar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:animationSpeed="standard"
+        app:android11KeyboardFeature="true">
+
+        <!-- 内容区域 -->
+        <!-- edit_view 指定一个 EditText 用于输入 ，必须项-->
+        <!-- empty_view 指定用户点击该 ID 对应的 View 时实现面板或者输入法隐藏，非必须项 -->
+        <com.effective.android.panel.view.content.LinearContentContainer
+            android:id="@+id/content_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:edit_view="@id/chat_message_input"
+            tools:layout_height="500dp">
+
+            <com.tt.dramatime.widget.AutoHidePanelRecyclerView
+                android:id="@+id/message_rv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:tag="recycler_view"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/message_text_item" />
+
+            <View
+                android:id="@+id/line"
+                app:layout_constraintBottom_toTopOf="@id/input_ll"
+                android:layout_width="match_parent"
+                android:layout_above="@id/input_ll"
+                android:layout_height="1dp"
+                android:background="@color/color_ECECEC" />
+
+            <LinearLayout
+                android:id="@+id/input_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:background="@color/color_F6F6F6"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <com.hjq.shape.layout.ShapeLinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:shape_radius="17dp"
+                    app:shape_solidColor="@color/white">
+
+                    <EditText
+                        android:id="@+id/chat_message_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:hint="@string/please_enter"
+                        android:maxHeight="120dp"
+                        android:minHeight="34dp"
+                        android:paddingHorizontal="13dp"
+                        android:paddingVertical="6dp"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/color_A7A8AA"
+                        android:textSize="13sp" />
+
+                </com.hjq.shape.layout.ShapeLinearLayout>
+
+                <com.tt.dramatime.widget.fonttext.FontTextView
+                    android:id="@+id/send_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="34dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginHorizontal="6dp"
+                    android:background="@drawable/button_small_34_bg"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:paddingHorizontal="15dp"
+                    android:text="@string/send"
+                    android:textColor="#fff"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </com.effective.android.panel.view.content.LinearContentContainer>
+
+        <!-- 面板区域，仅能包含PanelView-->
+        <com.effective.android.panel.view.panel.PanelContainer
+            android:id="@+id/panel_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_height="0dp"
+            tools:layout_weight="1">
+
+            <com.effective.android.panel.view.panel.PanelView
+                android:id="@+id/panel_emotion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:panel_layout="@layout/view_list_load_error"
+                app:panel_trigger="@id/panel_emotion" />
+
+        </com.effective.android.panel.view.panel.PanelContainer>
+
+    </com.effective.android.panel.view.PanelSwitchLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

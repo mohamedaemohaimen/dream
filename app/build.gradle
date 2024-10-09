@@ -1,0 +1,343 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'com.google.devtools.ksp'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+    id 'android.aop'//最好放在最后一行
+}
+apply from: '../common.gradle'
+apply from: "utils.gradle"
+
+// Android 代码规范文档：https://github.com/getActivity/AndroidCodeStandard
+android {
+    namespace 'com.tt.dramatime'
+
+    // 资源目录存放指引：https://developer.android.google.cn/guide/topics/resources/providing-resources
+    defaultConfig {
+
+        // 无痛修改包名：https://www.jianshu.com/p/17327e191d2e
+        applicationId 'com.tt.dramatime'
+
+        // 仅保留 xxhdpi 图片资源（目前主流分辨率 1920 * 1080）
+        resourceConfigurations += ['xxhdpi']
+
+        // 混淆配置
+        proguardFiles 'proguard-sdk.pro', 'proguard-app.pro'
+
+        // 日志打印开关
+        buildConfigField('boolean', 'LOG_ENABLE', '' + LOG_ENABLE + '')
+        // 测试服务器的主机地址
+        buildConfigField('String', 'HOST_URL', '"' + HOST_URL + '"')
+    }
+
+    bundle {
+        language {
+            // This property is set to true by default.
+            // You can specify `false` to turn off
+            // generating configuration APKs for language resources.
+            // These resources are instead packaged with each base and
+            // feature APK.
+            // Continue reading below to learn about situations when an app
+            // might change setting to `false`, otherwise consider leaving
+            // the default on for more optimized downloads.
+            enableSplit = false
+        }
+    }
+
+    // Apk 签名的那些事：https://www.jianshu.com/p/a1f8e5896aa2
+    signingConfigs {
+        config {
+            storeFile file(StoreFile)
+            storePassword StorePassword
+            keyAlias KeyAlias
+            keyPassword KeyPassword
+        }
+    }
+    packagingOptions {
+        jniLibs {
+            excludes += ['META-INF/*******', 'lib/armeabi/libijkhlscache-master.so', 'lib/armeabi-v7a/libijkhlscache-master.so', 'lib/arm64-v8a/libijkhlscache-master.so']
+        }
+        resources {
+            excludes += ['META-INF/*******']
+        }
+        // 新客户集成 SDK 建议把下面的脚本加上，可以优化包体积
+    }
+
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+        buildConfig true //开启这个属性后，BuildConfig 类才会被编译到 APK 中，并且会自动生成，可以拿到DEBUG等参数的值
+    }
+
+    // 构建配置：https://developer.android.google.cn/studio/build/build-variants
+    buildTypes {
+
+        debug {
+            // 给包名添加后缀
+            //applicationIdSuffix '.debug'
+            // 调试模式开关
+            debuggable true
+            jniDebuggable true
+            // 压缩对齐开关
+            zipAlignEnabled false
+            // 移除无用的资源
+            shrinkResources false
+            // 代码混淆开关
+            minifyEnabled false
+            // 签名信息配置
+            signingConfig signingConfigs.config
+            // 添加清单占位符
+            addManifestPlaceholders(['app_name'       : 'DramaTime Debug 版',
+                                     'facebook_app_id': "1451335392425640"])
+            // 调试模式下只保留一种架构的 so 库，提升打包速度
+            ndk {
+                abiFilters 'armeabi-v7a', 'arm64-v8a'
+            }
+        }
+
+        preview.initWith(debug)
+        preview {
+            applicationIdSuffix ''
+            // 添加清单占位符
+            addManifestPlaceholders(['app_name'       : 'DramaTime Preview 版',
+                                     'facebook_app_id': "1451335392425640"])
+        }
+
+        release {
+            // 调试模式开关
+            debuggable false
+            jniDebuggable false
+            // 压缩对齐开关
+            zipAlignEnabled true
+            // 移除无用的资源
+            shrinkResources true
+            // 代码混淆开关
+            minifyEnabled true
+            // 签名信息配置
+            signingConfig signingConfigs.config
+            // 添加清单占位符
+            addManifestPlaceholders(['app_name'       : '@string/app_name',
+                                     'facebook_app_id': "1451335392425640"])
+            // 仅保留两种架构的 so 库，根据 Bugly 统计得出
+            ndk {
+                // armeabi：万金油架构平台（占用率：0%）
+                // armeabi-v7a：曾经主流的架构平台（占用率：10%）
+                // arm64-v8a：目前主流架构平台（占用率：95%）
+                abiFilters 'armeabi-v7a', 'arm64-v8a'
+            }
+        }
+
+    }
+
+    // AOP 配置（exclude 和 include 二选一）
+    // 需要进行配置，否则就会引发冲突，具体表现为：
+    // 第一种：编译不过去，报错：java.util.zip.ZipException：Cause: zip file is empty
+    // 第二种：编译能过去，但运行时报错：ClassNotFoundException: Didn't find class on path: DexPathList
+    androidAopConfig {
+        // enabled 为 false 切面不再起作用，默认不写为 true
+        enabled true
+        // 只对以下包名做 AOP 处理
+        include android.defaultConfig.applicationId
+        // 可排除 kotlin 相关，提高速度
+        exclude 'kotlin.jvm', 'kotlin.internal', 'kotlinx.coroutines.internal', 'kotlinx.coroutines.android'
+        // verifyLeafExtends 是否开启验证叶子继承，默认打开，如果没有设置 @AndroidAopMatchClassMethod 的 type = MatchType.LEAF_EXTENDS，可以关闭
+        verifyLeafExtends true
+        //默认关闭，开启在 Build 或 打包后 将会生成切点信息json文件在 app/build/tmp/cutInfo.json
+        cutInfoJson false
+        //默认开启，设置 false 后会没有增量编译效果 筛选（关键字： AndroidAOP woven info code） build 输出日志可看时间
+        increment = true//修改、增加、删除匹配切面的话，就会走全量编译
+    }
+
+    lint {
+        disable 'HardcodedText', 'ContentDescription'
+    }
+
+    // app 输出文件名配置
+    setProperty("archivesBaseName", getArtifactName(defaultConfig))
+}
+
+// 添加构建依赖项：https://developer.android.google.cn/studio/build/dependencies
+// api 与 implementation 的区别：https://www.jianshu.com/p/8962d6ba936e
+dependencies {
+    // 基类封装
+    implementation project(':library:base')
+    // 控件封装
+    implementation project(':library:widget')
+
+    // 权限请求框架：https://github.com/getActivity/XXPermissions
+    implementation 'com.github.getActivity:XXPermissions:18.6'
+
+    // 标题栏框架：https://github.com/getActivity/TitleBar
+    implementation 'com.github.getActivity:TitleBar:10.5'
+
+    // 吐司框架：https://github.com/getActivity/Toaster
+    implementation 'com.github.getActivity:Toaster:12.6'
+
+    // 网络请求框架：https://github.com/getActivity/EasyHttp
+    implementation 'com.github.getActivity:EasyHttp:12.8'
+    // OkHttp 框架：https://github.com/square/okhttp
+    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
+
+    // Json 解析框架：https://github.com/google/gson
+    implementation 'com.google.code.gson:gson:2.10.1'
+    // Gson 解析容错：https://github.com/getActivity/GsonFactory
+    implementation 'com.github.getActivity:GsonFactory:9.5'
+    // Kotlin 反射库：用于反射 Kotlin data class 类对象
+    implementation 'org.jetbrains.kotlin:kotlin-reflect:1.9.22'
+
+    // Shape 框架：https://github.com/getActivity/ShapeView
+    implementation 'com.github.getActivity:ShapeView:9.0'
+
+    // 图片加载框架：https://github.com/bumptech/glide
+    // 官方使用文档：https://github.com/Muyangmin/glide-docs-cn
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+    ksp 'com.github.bumptech.glide:ksp:4.15.1'
+
+    // 沉浸式框架：https://github.com/gyf-dev/ImmersionBar
+    implementation 'com.geyifeng.immersionbar:immersionbar:3.2.2'
+
+    // 手势 ImageView：https://github.com/Baseflow/PhotoView
+    implementation 'com.github.Baseflow:PhotoView:2.3.0'
+
+    // 动画解析库：https://github.com/airbnb/lottie-android
+    // 动画资源：https://lottiefiles.com、https://icons8.com/animated-icons
+    implementation 'com.airbnb.android:lottie:6.4.0'
+
+    // 上拉刷新下拉加载框架：https://github.com/scwang90/SmartRefreshLayout
+    implementation 'io.github.scwang90:refresh-layout-kernel:2.1.0'
+    implementation 'io.github.scwang90:refresh-header-material:2.1.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    // 日志打印框架：https://github.com/JakeWharton/timber
+    implementation 'com.jakewharton.timber:timber:5.0.1'
+
+    // 指示器框架：https://github.com/ongakuer/CircleIndicator
+    implementation 'me.relex:circleindicator:2.1.6'
+
+    // 腾讯 MMKV：https://github.com/Tencent/MMKV
+    implementation 'com.tencent:mmkv:1.3.9'
+
+    // 内存泄漏监测框架：https://github.com/square/leakcanary
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.13'
+    previewImplementation 'com.squareup.leakcanary:leakcanary-android:2.13'
+
+    // 语种切换框架：https://github.com/getActivity/MultiLanguages
+    implementation 'com.github.getActivity:MultiLanguages:9.3'
+
+    //AndroidAOP https://github.com/FlyJingFish/AndroidAOP 必须项 👇
+    implementation 'io.github.FlyJingFish.AndroidAop:android-aop-core:2.0.6'
+    implementation 'io.github.FlyJingFish.AndroidAop:android-aop-annotation:2.0.6'
+    //非必须项 👇，如果你想自定义切面需要用到，⚠️支持Java和Kotlin代码写的切面
+    ksp 'io.github.FlyJingFish.AndroidAop:android-aop-ksp:2.0.6'
+
+    // RecyclerView Adapter: https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation "io.github.cymchad:BaseRecyclerViewAdapterHelper4:4.1.4"
+
+    //banner https://github.com/youth5201314/banner
+    implementation 'io.github.youth5201314:banner:2.2.3'
+
+    //DslTabLayout https://github.com/angcyo/DslTabLayout
+    implementation 'com.github.angcyo.DslTablayout:TabLayout:3.5.5'
+    implementation 'com.github.angcyo.DslTablayout:ViewPager1Delegate:3.5.5'
+    implementation 'com.github.angcyo.DslTablayout:ViewPager2Delegate:3.5.5'
+
+    //SmartViewPager2Adapter https://github.com/lihangleo2/ViewPager2Demo
+    implementation 'com.github.lihangleo2:SmartViewPager2Adapter:3.0.0'
+
+    // 工具类：https://github.com/Blankj/AndroidUtilCode
+    implementation 'com.blankj:utilcodex:1.31.1'
+
+    //Logger 打印： https://github.com/orhanobut/logger
+    implementation 'com.orhanobut:logger:2.2.0'
+
+    //腾讯播放器 获取最新版本把版本号改成 latest.release https://cloud.tencent.com/document/product/881/67113#.E4.BA.8B.E4.BB.B6.E9.80.9A.E7.9F.A5.E6.8E.A5.E5.8F.A3
+    implementation 'com.tencent.liteav:LiteAVSDK_Player_Premium:12.0.0.14689'
+
+    //https://github.com/greenrobot/EventBus
+    implementation 'org.greenrobot:eventbus:3.3.1'
+
+    //富文本 https://github.com/iwgang/SimplifySpan
+    implementation 'com.github.iwgang:simplifyspan:2.2'
+
+    //https://github.com/DSAppTeam/PanelSwitchHelper/blob/master/README-zh.md
+    implementation 'com.github.DSAppTeam:PanelSwitchHelper:v1.5.7'
+
+    //Google Play 支付 https://developer.android.com/google/play/billing/integrate?hl=zh-cn#java
+    implementation "com.android.billingclient:billing-ktx:7.0.0"
+    implementation 'com.google.guava:guava:32.0.1-jre'
+
+    //https://firebase.google.com/docs/android/setup?authuser=1&hl=zh-cn
+    implementation platform('com.google.firebase:firebase-bom:33.1.1')
+    //firebase统计
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    //firebase推送
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+    //firebase异常捕捉
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    //google登录
+    implementation 'com.google.android.gms:play-services-auth:21.2.0'
+    //FaceBook sdk 包含FaceBook登录 https://developers.facebook.com/docs/android/getting-started
+    implementation 'com.facebook.android:facebook-android-sdk:17.0.0'
+
+    //applovin融合广告 https://dash.applovin.com/documentation/mediation/android/mediation-adapters?network=TIKTOK_NETWORK
+    implementation 'com.applovin:applovin-sdk:12.5.0'
+    implementation 'com.applovin.mediation:google-adapter:23.0.0.1'
+    implementation 'com.applovin.mediation:ironsource-adapter:7.9.0.0.0'
+    implementation 'com.applovin.mediation:facebook-adapter:6.17.0.0'
+    implementation 'com.applovin.mediation:mintegral-adapter:16.6.71.0'
+    implementation 'com.applovin.mediation:bytedance-adapter:5.8.1.0.1'
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.1.0'
+    implementation 'com.google.android.ump:user-messaging-platform:2.2.0'
+
+    //应用角标控制 https://github.com/leolin310148/ShortcutBadger
+    implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
+
+    //google installReferrer
+    //https://developer.android.com/google/play/installreferrer?hl=zh-cn
+    //https://developers.google.com/analytics/devguides/collection/android/v4/campaigns?hl=zh-cn
+    implementation "com.android.installreferrer:installreferrer:2.2"
+
+    //https://developers.google.com/admob/android/native?hl=zh-cn
+    implementation 'com.google.android.gms:play-services-ads:23.2.0'
+
+    //https://developer.android.com/guide/playcore?hl=zh-cn#playcore-migration
+    implementation 'com.google.android.play:review-ktx:2.0.1'
+
+    //https://github.com/z244370114/DeviceLibray
+    implementation 'com.github.z244370114:DeviceLibray:1.0.5'
+
+    //https://bytedance.sg.larkoffice.com/docx/VZ0Tdc94moOlevxkhZvlo2gFgle
+    //https://business-api.tiktok.com/portal/docs?rid=rscv11ob9m9&id=1683138352999426
+    implementation 'com.github.tiktok:tiktok-business-android-sdk:1.3.5'
+    implementation 'androidx.lifecycle:lifecycle-process:2.6.2'
+    implementation 'androidx.lifecycle:lifecycle-common-java8:2.6.2'
+
+    //用于创建推送任务 https://developer.android.com/guide/background?hl=zh-cn#workmanager
+    implementation "androidx.work:work-runtime-ktx:2.8.1"
+
+    //官方建议使用SplashScreen库实现启动页 https://developer.android.com/guide/topics/ui/splash-screen?hl=zh-cn
+    implementation "androidx.core:core-splashscreen:1.0.1"
+
+    //GooglePlay应用内更新 https://developer.android.com/guide/playcore/in-app-updates/kotlin-java?hl=zh-cn
+    implementation 'com.google.android.play:app-update-ktx:2.1.0'
+
+    //https://github.com/getActivity/Logcat
+    debugImplementation 'com.github.getActivity:Logcat:11.86'
+
+    // 多语种：https://github.com/getActivity/MultiLanguages
+    // 悬浮窗：https://github.com/getActivity/XToast
+    // 日志输出：https://github.com/getActivity/Logcat
+    // 轮播图：https://github.com/bingoogolapple/BGABanner-Android
+    // 二维码：https://github.com/bingoogolapple/BGAQRCode-Android
+    // 跑马灯：https://github.com/sunfusheng/MarqueeView
+    // 对象注解：https://www.jianshu.com/p/f1f888e4a35f
+    // 对象存储：https://github.com/leavesC/DoKV
+    // 多渠道打包：https://github.com/Meituan-Dianping/walle
+    // 设备唯一标识：http://msa-alliance.cn/col.jsp?id=120
+    // 嵌套滚动容器：https://github.com/donkingliang/ConsecutiveScroller
+    // 隐私调用监控：https://github.com/huage2580/PermissionMonitor
+}

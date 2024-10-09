@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/dp_303"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_308"
+        android:layout_gravity="center"
+        android:background="@drawable/vip_discounts_bg">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/vip_frame_iv"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_23"
+            app:layout_constraintBottom_toBottomOf="@id/title_tv"
+            app:layout_constraintEnd_toStartOf="@id/title_tv"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/title_tv"
+            tools:src="@drawable/vip_annual_frame_ic" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_16"
+            android:textColor="@color/color_FFC48D"
+            android:textSize="@dimen/sp_22"
+            app:font_bold="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/vip_frame_iv"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Weekly VIP" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/introduce_tv"
+            android:layout_width="@dimen/dp_273"
+            android:layout_height="@dimen/dp_108"
+            android:layout_marginTop="@dimen/dp_16"
+            android:background="@drawable/vip_discounts_introduce_bg"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="@dimen/dp_8"
+            android:paddingHorizontal="@dimen/dp_13"
+            android:textColor="@color/color_FFC48D"
+            android:textSize="@dimen/sp_12"
+            app:font_bold="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_tv"
+            tools:text="@string/weekly_vip_introduce" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/unlock_all_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:drawableTop="@drawable/vip_card_unlock_ic"
+            android:drawablePadding="@dimen/dp_4"
+            android:text="@string/unlock_all"
+            android:textColor="@color/color_FFC48D"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintEnd_toStartOf="@id/no_ad_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/introduce_tv" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/no_ad_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:drawableTop="@drawable/vip_card_ads_ic"
+            android:drawablePadding="@dimen/dp_4"
+            android:text="@string/no_ads"
+            android:textColor="@color/color_FFC48D"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintEnd_toStartOf="@id/frame_tv"
+            app:layout_constraintStart_toEndOf="@id/unlock_all_tv"
+            app:layout_constraintTop_toTopOf="@id/unlock_all_tv" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/frame_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/vip_card_frame_ic"
+            android:drawablePadding="@dimen/dp_4"
+            android:text="@string/vip_frame"
+            android:textColor="@color/color_FFC48D"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/no_ad_tv"
+            app:layout_constraintTop_toTopOf="@id/unlock_all_tv" />
+
+        <com.tt.dramatime.widget.fonttext.MyShapeTextView
+            android:id="@+id/renew_tv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_38"
+            android:layout_marginHorizontal="23dp"
+            android:layout_marginTop="@dimen/dp_12"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/unlock_all_tv"
+            app:shape_radius="@dimen/dp_19"
+            app:shape_solidGradientEndColor="@color/color_FDAF73"
+            app:shape_solidGradientOrientation="topToBottom"
+            app:shape_solidGradientStartColor="@color/color_FBE2BD"
+            app:shape_textColor="@color/color_4B2600"
+            app:stv_font_bold="true"
+            tools:text="US＄49.99" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/close_iv"
+        android:layout_width="@dimen/dp_36"
+        android:layout_height="@dimen/dp_36"
+        android:layout_marginTop="@dimen/dp_80"
+        android:background="@drawable/dialog_grey_close" />
+
+</LinearLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="number_episodes">
+        <item>1–30</item>
+        <item>31–60</item>
+        <item>61–90</item>
+        <item>91–120</item>
+        <item>121–150</item>
+        <item>151–180</item>
+    </string-array>
+
+    <string-array name="number_first_episodes">
+        <item>0–30</item>
+        <item>31–60</item>
+        <item>61–90</item>
+        <item>91–120</item>
+        <item>121–150</item>
+        <item>151–180</item>
+    </string-array>
+
+    <string-array name="zero_first_episodes">
+        <item>0</item>
+    </string-array>
+
+    <string-array name="report_content">
+        <item>Infringement</item>
+        <item>Jumbled content</item>
+        <item>Breach of law</item>
+        <item>Pornographic</item>
+        <item>Other reasons</item>
+    </string-array>
+
+
+</resources>

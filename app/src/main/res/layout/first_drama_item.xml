@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hjq.shape.layout.ShapeConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/episodes_ll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginHorizontal="16dp"
+    app:shape_radius="6dp"
+    app:shape_solidColor="@color/color_F6F5FA">
+
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/poster_iv"
+        android:layout_width="@dimen/dp_139"
+        android:layout_height="@dimen/dp_188"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:round="6dp"
+        tools:src="@color/color_999999" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/poster_iv"
+        app:layout_constraintEnd_toEndOf="@id/poster_iv"
+        app:layout_constraintTop_toTopOf="@id/poster_iv"
+        app:layout_constraintBottom_toBottomOf="@id/poster_iv"
+        android:src="@drawable/home_first_drama_play_ic"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/label_iv"
+        android:layout_width="100dp"
+        android:layout_height="17dp"
+        android:layout_gravity="end"
+        android:scaleType="fitEnd"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/poster_iv"
+        app:layout_constraintTop_toTopOf="@id/poster_iv"
+        tools:src="@drawable/red_label_rtl_bg"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/dp_116"
+        android:layout_height="@dimen/dp_120"
+        android:background="@drawable/coming_soon_ic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/title_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_13"
+        android:layout_marginTop="@dimen/dp_10"
+        android:ellipsize="end"
+        android:lineSpacingMultiplier="1.1"
+        android:maxLines="2"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_15"
+        app:font_bold="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/poster_iv"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Misplaced Love of what balalall balabal balalall balabalbalalall balabalbalalall balabalbalalall balabalbalalall balabalbalalall balabalbalalall balabal" />
+
+    <com.tt.dramatime.widget.flowlayout.TagFlowLayout
+        android:id="@+id/ep_tag"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        app:auto_select_effect="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/title_tv"
+        app:layout_constraintTop_toBottomOf="@id/title_tv" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/introduce_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lineSpacingMultiplier="1.1"
+        android:maxLines="3"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toEndOf="@id/title_tv"
+        app:layout_constraintStart_toStartOf="@id/title_tv"
+        app:layout_constraintTop_toBottomOf="@id/ep_tag"
+        tools:text="Misplaced Love of what bala lal bala Mispl Love of Misplaced Love Misplaced Love ...Misplaced Love of what bala lal bala Mispla Love of Misced Love Misplaced Love " />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_2"
+        android:layout_marginBottom="@dimen/dp_3"
+        android:ellipsize="end"
+        android:textColor="@color/color_C640FF"
+        android:textSize="@dimen/sp_11"
+        app:font_bold="true"
+        app:layout_constraintBottom_toBottomOf="@id/reserve_ll"
+        app:layout_constraintStart_toStartOf="@id/title_tv"
+        app:layout_constraintTop_toTopOf="@id/reserve_ll"
+        tools:text="08-21 10:00" />
+
+    <com.hjq.shape.layout.ShapeLinearLayout
+        android:id="@+id/reserve_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_26"
+        android:layout_marginEnd="@dimen/dp_7"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:gravity="center"
+        android:minWidth="@dimen/dp_90"
+        android:paddingHorizontal="@dimen/dp_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:shape_radius="@dimen/dp_6"
+        app:shape_solidGradientEndColor="@color/color_C640FF"
+        app:shape_solidGradientStartColor="@color/color_23E1FF">
+
+        <ImageView
+            android:id="@+id/button_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:background="@drawable/ep_reminder_ic" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/button_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_4"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_12"
+            tools:text="Remind Me" />
+
+    </com.hjq.shape.layout.ShapeLinearLayout>
+
+
+</com.hjq.shape.layout.ShapeConstraintLayout>

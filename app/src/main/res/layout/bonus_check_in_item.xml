@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/dp_41"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/dp_5"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/coin_ll"
+        android:layout_width="@dimen/dp_41"
+        android:layout_height="@dimen/dp_70"
+        android:background="@drawable/bonus_check_in_normal_bg"
+        android:orientation="vertical">
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/add_coin_tv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/dp_11"
+            android:textColor="@color/color_EFA943"
+            android:textSize="@dimen/sp_13"
+            app:font_bold="true"
+            tools:text="+100" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/coin_iv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_2"
+            android:layout_marginBottom="@dimen/dp_3"
+            android:scaleType="centerCrop"
+            tools:background="@drawable/bonus_check_in_hook_ic" />
+    </LinearLayout>
+
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/day_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/color_6B2872"
+        android:textSize="@dimen/sp_10"
+        tools:text="Day 1" />
+</LinearLayout>

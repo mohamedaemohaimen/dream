@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/dp_283"
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/dp_316"
+    android:layout_gravity="center"
+    android:layout_marginBottom="@dimen/dp_77"
+    android:background="@drawable/notice_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_138"
+        android:text="@string/enable_notifications"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_19"
+        app:font_bold="true" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/enable_notifications_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_14"
+        android:gravity="center"
+        android:textColor="@color/color_666666"
+        android:textSize="@dimen/sp_13"
+        tools:text="@string/receive_timely" />
+
+    <com.tt.dramatime.widget.fonttext.MyShapeTextView
+        android:id="@+id/allow_tv"
+        style="@style/Button38Style"
+        android:layout_marginHorizontal="@dimen/dp_41"
+        android:layout_marginTop="@dimen/dp_24"
+        android:text="@string/allow" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/not_now_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="center_horizontal"
+        android:text="@string/not_now"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/sp_14" />
+
+</LinearLayout>

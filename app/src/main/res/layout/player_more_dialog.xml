@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal|bottom"
+    android:orientation="vertical">
+
+    <com.hjq.shape.layout.ShapeLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="34dp"
+        app:shape_radiusInTopLeft="25dp"
+        app:shape_radiusInTopRight="25dp"
+        app:shape_solidColor="@color/color_232323">
+
+        <com.hjq.shape.view.ShapeView
+            android:id="@+id/line"
+            android:layout_width="31dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            app:shape_radius="2dp"
+            app:shape_solidColor="@color/color_BBBBBB" />
+
+        <com.tt.dramatime.widget.SettingBar
+            android:id="@+id/share_sb"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/setting_bar_bg"
+            app:bar_leftDrawable="@drawable/share_ic"
+            app:bar_leftText="@string/share"
+            app:bar_leftTextColor="@color/white"
+            app:bar_lineVisible="false"
+            app:bar_rightDrawable="@drawable/arrow_right_ic"
+            app:bar_rightDrawablePadding="6dp" />
+
+        <com.tt.dramatime.widget.SettingBar
+            android:id="@+id/auto_unlock_sb"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/setting_bar_bg"
+            app:bar_leftDrawable="@drawable/auto_unlock_ic"
+            app:bar_leftText="@string/auto_unlock"
+            android:visibility="gone"
+            app:bar_leftTextColor="@color/white"
+            app:bar_lineVisible="false">
+
+            <com.tt.widget.view.SwitchButton
+                android:id="@+id/password_toggle_sb"
+                android:layout_width="44dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginHorizontal="16dp" />
+
+        </com.tt.dramatime.widget.SettingBar>
+
+        <com.tt.dramatime.widget.SettingBar
+            android:id="@+id/customer_sb"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/setting_bar_bg"
+            app:bar_leftDrawable="@drawable/customer_ic"
+            app:bar_leftText="@string/customer_service"
+            app:bar_leftTextColor="@color/white"
+            app:bar_lineVisible="false"
+            app:bar_rightDrawable="@drawable/arrow_right_ic"
+            app:bar_rightDrawablePadding="6dp" />
+
+        <com.tt.dramatime.widget.SettingBar
+            android:id="@+id/report_sb"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/setting_bar_bg"
+            app:bar_leftDrawable="@drawable/report_ic"
+            app:bar_leftText="@string/report"
+            app:bar_leftTextColor="@color/white"
+            app:bar_lineVisible="false"
+            app:bar_rightDrawable="@drawable/arrow_right_ic"
+            app:bar_rightDrawablePadding="6dp" />
+
+    </com.hjq.shape.layout.ShapeLinearLayout>
+
+</FrameLayout>

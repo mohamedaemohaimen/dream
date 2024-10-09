@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/number_episodes_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minWidth="13dp"
+        android:textColor="@color/color_999999"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1-30" />
+
+    <com.hjq.shape.view.ShapeView
+        android:id="@+id/indicator"
+        android:layout_width="13dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintEnd_toEndOf="@id/number_episodes_tv"
+        app:layout_constraintStart_toStartOf="@id/number_episodes_tv"
+        app:layout_constraintTop_toBottomOf="@id/number_episodes_tv"
+        app:shape_radius="2dp"
+        app:shape_solidColor="@color/color_C640FF" />
+
+    <View
+        android:id="@+id/line_view"
+        android:layout_width="1dp"
+        android:layout_height="10dp"
+        android:layout_marginHorizontal="8dp"
+        android:background="@color/color_707070"
+        app:layout_constraintBottom_toBottomOf="@id/number_episodes_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/number_episodes_tv"
+        app:layout_constraintTop_toTopOf="@id/number_episodes_tv" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

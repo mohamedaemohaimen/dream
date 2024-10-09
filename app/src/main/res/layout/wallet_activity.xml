@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grey_bg"
+    android:orientation="vertical">
+
+    <com.hjq.bar.TitleBar
+        style="@style/TitleBarStyle"
+        app:title="@string/wallet" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="227dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/wallet_bg">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="49dp"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/wallet_coins_ic" />
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:id="@+id/total_coins_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:text="0"
+                android:textColor="@color/color_351F51"
+                android:textSize="22sp"
+                app:font_bold="true" />
+        </LinearLayout>
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/coins_bonus_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/color_351F51"
+            app:layout_constraintBottom_toTopOf="@id/recharge_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Coins 0 | Bonus 0" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/recharge_tv"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginBottom="18dp"
+            android:background="@drawable/button_big_45_bg"
+            android:gravity="center"
+            android:text="@string/top_up"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:font_bold="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.hjq.shape.layout.ShapeLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="28dp"
+        android:orientation="vertical"
+        app:shape_radius="13dp"
+        app:shape_solidColor="@color/white">
+
+        <com.tt.dramatime.widget.SettingBar
+            android:id="@+id/unlock_history_sb"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/transparent"
+            app:bar_leftText="@string/unlock_history"
+            app:bar_leftTextBold="true"
+            app:bar_rightDrawable="@drawable/arrow_right_ic"
+            app:bar_rightDrawablePadding="6dp" />
+
+        <com.tt.dramatime.widget.SettingBar
+            android:id="@+id/transaction_sb"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/transparent"
+            app:bar_leftText="@string/transaction_history"
+            app:bar_leftTextBold="true"
+            app:bar_lineVisible="false"
+            app:bar_rightDrawable="@drawable/arrow_right_ic"
+            app:bar_rightDrawablePadding="6dp" />
+    </com.hjq.shape.layout.ShapeLinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="report_content">
+        <item>Infracción</item>
+        <item>Contenido mezclado</item>
+        <item>Incumplimiento de la ley</item>
+        <item>Pornográfico</item>
+        <item>Otras razones</item>
+    </string-array>
+
+</resources>

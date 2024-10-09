@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tt.dramatime.widget.fonttext.FontTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popular_dramas_tv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:drawableStart="@drawable/search_hot_ic"
+    android:drawablePadding="6dp"
+    android:paddingTop="@dimen/dp_10"
+    android:paddingHorizontal="16dp"
+    android:text="@string/search_popular"
+    android:textSize="@dimen/sp_16"
+    android:textStyle="bold" />

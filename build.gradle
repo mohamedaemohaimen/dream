@@ -1,0 +1,36 @@
+
+plugins {
+    id 'com.android.application' version '8.5.0' apply false
+    id 'com.android.library' version '8.5.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.9.21' apply false
+    id 'com.google.devtools.ksp' version '1.9.21-1.0.16' apply false
+    //Google服务插件 https://developers.google.cn/android/guides/google-services-plugin?hl=zh-cn
+    id 'com.google.gms.google-services' version '4.4.2' apply false
+    id 'com.google.firebase.crashlytics' version '2.9.9' apply false
+    id "io.github.FlyJingFish.AndroidAop.android-aop" version "2.0.6" apply false
+}
+
+// 导入配置文件
+apply from: 'configs.gradle'
+
+allprojects {
+    tasks.withType(JavaCompile).configureEach {
+        // 设置全局编码
+        options.encoding = 'UTF-8'
+    }
+    tasks.withType(Javadoc).configureEach {
+        // 设置文档编码
+        options {
+            encoding 'UTF-8'
+            charSet 'UTF-8'
+            links 'http://docs.oracle.com/javase/7/docs/api'
+        }
+    }
+
+    // 将构建文件统一输出到项目根目录下的 build 文件夹
+    setBuildDir(new File(rootDir, "build/${path.replaceAll(':', '/')}"))
+}
+
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
+}

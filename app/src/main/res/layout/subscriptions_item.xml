@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vip_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginBottom="15dp"
+    android:background="@drawable/vip_monthly_bg">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/vip_desc_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/vip_frame_iv"
+            android:layout_width="24dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/vip_tv"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/vip_weekly_frame_ic" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/vip_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:textColor="@color/color_D6B392"
+            android:textSize="18sp"
+            app:font_bold="true"
+            app:layout_constraintBottom_toBottomOf="@id/vip_frame_iv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/vip_frame_iv"
+            tools:text="Weekly VIP" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/vip_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:lineSpacingExtra="6dp"
+            android:textColor="@color/color_CCCCCC"
+            android:textSize="13sp"
+            app:font_bold="true"
+            app:layout_constraintStart_toStartOf="@id/vip_tv"
+            app:layout_constraintTop_toBottomOf="@id/vip_frame_iv"
+            tools:text="@string/weekly_vip_introduce" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/vip_price_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="11dp"
+        android:textColor="@color/color_D6B392"
+        android:textSize="16sp"
+        app:font_bold="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="US$ 9.99" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/first_trial_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/color_D6B392"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="@id/vip_price_tv"
+        app:layout_constraintTop_toBottomOf="@id/vip_price_tv"
+        tools:text="First trial, then $29.99/week" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/select_iv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:background="@drawable/store_select_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/corner_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/vip_super_value_bg"
+        android:gravity="center"
+        android:paddingHorizontal="11dp"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="99% of people subscribed" />
+</androidx.constraintlayout.widget.ConstraintLayout>

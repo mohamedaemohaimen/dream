@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/dp_319"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_286"
+        android:background="@drawable/ad_unlock_bg"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_31"
+            android:gravity="center"
+            android:text="@string/free_unlock_chance"
+            android:textSize="@dimen/sp_23"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_24">
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:id="@+id/prepare_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_666666"
+                android:textSize="@dimen/sp_13"
+                app:font_bold="true"
+                tools:text="Preparing Ads 1/3, displaying in " />
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:id="@+id/time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_FF4C6D"
+                android:textSize="@dimen/sp_13"
+                app:font_bold="true"
+                tools:text="5s" />
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=".."
+                android:textColor="@color/color_666666"
+                android:textSize="@dimen/sp_13"
+                app:font_bold="true" />
+        </LinearLayout>
+
+
+        <com.hjq.shape.layout.ShapeFrameLayout
+            android:layout_width="@dimen/dp_287"
+            android:layout_height="@dimen/dp_45"
+            android:layout_marginTop="@dimen/dp_23"
+            android:drawableStart="@drawable/bonus_ad_ic"
+            app:shape_radius="@dimen/dp_42"
+            app:shape_solidColor="@color/color_C640FF">
+
+            <com.tt.dramatime.widget.fonttext.MyShapeTextView
+                android:id="@+id/watch_unlock_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableStart="@drawable/bonus_ad_ic"
+                android:gravity="center"
+                android:drawablePadding="@dimen/dp_10"
+                android:textSize="@dimen/sp_18"
+                app:shape_radius="@dimen/dp_42"
+                app:shape_solidColor="@color/color_C640FF"
+                app:shape_textColor="@color/white"
+                tools:text="Watch ads to unlock 3eps" />
+
+
+        </com.hjq.shape.layout.ShapeFrameLayout>
+
+        <com.tt.dramatime.widget.fonttext.MyShapeTextView
+            android:id="@+id/ad_free_tv"
+            android:layout_width="@dimen/dp_287"
+            android:layout_height="@dimen/dp_45"
+            android:layout_marginTop="@dimen/dp_15"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/dp_18"
+            android:text="@string/ad_free_unlock"
+            android:textSize="@dimen/sp_18"
+            app:shape_radius="@dimen/dp_42"
+            app:shape_solidColor="@color/white60"
+            app:shape_strokeColor="@color/color_C640FF"
+            app:shape_strokeSize="@dimen/dp_2"
+            app:shape_textColor="@color/color_333333" />
+
+    </LinearLayout>
+
+
+    <ImageButton
+        android:id="@+id/close_btn"
+        android:layout_width="@dimen/dp_36"
+        android:layout_height="@dimen/dp_36"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_60"
+        android:background="@drawable/dialog_close" />
+
+</LinearLayout>

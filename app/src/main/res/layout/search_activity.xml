@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/title_bar"
+        style="@style/TitleBarTransparentStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_52"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_41"
+            android:layout_marginTop="@dimen/dp_3">
+
+            <com.hjq.shape.layout.ShapeLinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                app:shape_radius="@dimen/dp_21"
+                app:shape_solidColor="@color/color_F6F6F6">
+
+                <EditText
+                    android:id="@+id/search_et"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="13dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:drawableStart="@drawable/search_ic"
+                    android:drawablePadding="13dp"
+                    android:hint="@string/search_by_title"
+                    android:imeOptions="actionSearch"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/color_999999"
+                    android:textSize="12sp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/delete_iv"
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_16"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="@dimen/dp_13"
+                    android:src="@drawable/search_clean_ic"
+                    android:visibility="gone" />
+            </com.hjq.shape.layout.ShapeLinearLayout>
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:id="@+id/search_cancel_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingVertical="10dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="16dp"
+                android:text="@string/cancel"
+                android:textColor="@color/black"
+                app:font_bold="true" />
+        </LinearLayout>
+    </com.hjq.bar.TitleBar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/popular_rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:listitem="@layout/search_result_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_bar" />
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/refresh_sl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_bar"
+        app:srlEnableHeaderTranslationContent="false"
+        app:srlEnableLoadMore="true"
+        app:srlEnablePreviewInEditMode="false"
+        app:srlEnableRefresh="false"
+        app:srlPrimaryColor="#444444">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/search_nsv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.tt.widget.layout.NestedLinearLayout
+                android:id="@+id/search_ll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_10"/>
+
+                <com.tt.dramatime.widget.fonttext.FontTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="6dp"
+                    android:paddingHorizontal="16dp"
+                    android:text="@string/result"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/title_bar" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/dp_322">
+
+                    <LinearLayout
+                        android:id="@+id/empty_ll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_no_data"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@null"
+                            android:src="@drawable/no_data_ic" />
+
+                        <com.tt.dramatime.widget.fonttext.FontTextView
+                            android:id="@+id/tv_empty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/dp_50"
+                            android:layout_marginTop="@dimen/dp_12"
+                            android:gravity="center"
+                            android:text="Oops, No search results~"
+                            android:textColor="@color/color_D2D1D5" />
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/result_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                </FrameLayout>
+
+                <com.tt.dramatime.widget.fonttext.FontTextView
+                    android:id="@+id/may_like_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="6dp"
+                    android:paddingHorizontal="16dp"
+                    android:text="@string/you_may_like"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/title_bar" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/like_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            </com.tt.widget.layout.NestedLinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

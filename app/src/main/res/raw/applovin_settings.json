@@ -1,0 +1,7 @@
+{
+  "consent_flow_settings": {
+    "consent_flow_enabled": true,
+    "consent_flow_terms_of_service": "https://www.drama-time.com/privacy/terms_of_service",
+    "consent_flow_privacy_policy": "https://www.drama-time.com/privacy/policy"
+  }
+}

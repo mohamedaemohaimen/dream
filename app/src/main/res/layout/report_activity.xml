@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/white_short_bg"
+    android:orientation="vertical">
+
+    <com.hjq.bar.TitleBar
+        style="@style/TitleBarStyle"
+        app:leftIcon="@drawable/title_close_ic"
+        app:rightTitle="@string/submit"
+        app:rightTitleColor="@color/color_FF0000"
+        app:title="@string/report" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/please_select_reason"
+        android:textSize="12sp" />
+
+    <com.tt.dramatime.widget.flowlayout.TagFlowLayout
+        android:id="@+id/report_tag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        app:default_selection="true"
+        app:max_select="1"
+        app:required="true" />
+
+    <com.hjq.shape.view.ShapeEditText
+        android:id="@+id/content_et"
+        android:layout_width="match_parent"
+        android:layout_height="124dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="4dp"
+        android:gravity="start"
+        android:hint="@string/report_hint"
+        android:inputType="text"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/color_D3D3D3"
+        android:textSize="12sp"
+        app:shape_radius="20dp"
+        app:shape_solidColor="@color/white"
+        app:shape_strokeColor="@color/color_EDEDED"
+        app:shape_strokeSize="1dp" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/email_address"
+        android:textColor="@color/color_666666"
+        android:textSize="12sp" />
+
+    <com.hjq.shape.view.ShapeEditText
+        android:id="@+id/email_et"
+        android:layout_width="match_parent"
+        android:layout_height="124dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="10dp"
+        android:gravity="start"
+        android:hint="@string/email_address_hint"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/color_D3D3D3"
+        android:textSize="12sp"
+        app:shape_radius="20dp"
+        app:shape_solidColor="@color/white"
+        app:shape_strokeColor="@color/color_EDEDED"
+        app:shape_strokeSize="1dp" />
+
+</LinearLayout>

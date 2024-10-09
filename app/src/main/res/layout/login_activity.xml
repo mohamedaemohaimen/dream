@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".ui.activity.me.LoginActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/login_bg" />
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/title_bar"
+        style="@style/TitleBarStyle"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/login_logo_iv"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="83dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_bar"
+        app:srcCompat="@drawable/app_logo" />
+
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/welcome_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="@string/welcome_to"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_logo_iv" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/app_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/login_dramatime_ic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/welcome_tv" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="37dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/privacy_policy_tv"
+        app:layout_constraintTop_toBottomOf="@id/app_name_tv">
+
+        <FrameLayout
+            android:id="@+id/first_login_fl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="19dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/first_login_rtl_bg" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="27dp"
+                android:layout_height="22dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="3dp"
+                android:src="@drawable/first_login_coin_rtl_ic" />
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:id="@+id/first_login_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="5dp"
+                android:paddingStart="6dp"
+                android:paddingEnd="30dp"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                tools:ignore="SmallSp"
+                tools:text="@string/first_login" />
+        </FrameLayout>
+
+        <com.hjq.shape.layout.ShapeConstraintLayout
+            android:id="@+id/face_book_cl"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="32dp"
+            android:paddingHorizontal="33dp"
+            app:layout_constraintTop_toBottomOf="@id/first_login_fl"
+            app:shape_radius="25dp"
+            app:shape_solidColor="@color/color_1977F3">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/login_facebook_ic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/login_facebook"
+                android:textColor="@color/white"
+                app:font_bold="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </com.hjq.shape.layout.ShapeConstraintLayout>
+
+        <com.hjq.shape.layout.ShapeConstraintLayout
+            android:id="@+id/google_cl"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingHorizontal="33dp"
+            app:layout_constraintTop_toBottomOf="@id/face_book_cl"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="20dp"
+            app:shape_radius="25dp"
+            app:shape_solidColor="@color/white">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/login_google_ic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/login_google"
+                android:textColor="@color/black"
+                app:font_bold="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </com.hjq.shape.layout.ShapeConstraintLayout>
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/google_last_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/last_login_ic"
+            android:gravity="center"
+            android:paddingHorizontal="6dp"
+            android:paddingBottom="2dp"
+            android:text="@string/last_login"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SmallSp" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/facebook_last_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/last_login_ic"
+            android:gravity="center"
+            android:paddingHorizontal="6dp"
+            android:paddingBottom="2dp"
+            android:text="@string/last_login"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/google_cl"
+            tools:ignore="SmallSp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/privacy_policy_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:gravity="center"
+        android:textColor="@color/color_999999"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="By continuing  you agree to the\nTerms of Service and Privacy Policy" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

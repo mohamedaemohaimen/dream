@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="54dp"
+    android:layout_marginTop="7dp"
+    android:layout_marginEnd="7dp">
+
+    <com.tt.dramatime.widget.fonttext.MyShapeTextView
+        android:id="@+id/episodes_num_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:shape_radius="5dp"
+        app:shape_solidColor="@color/color_393939"
+        tools:text="1" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/lock_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:src="@drawable/episodes_lock_rtl_ic"
+        android:visibility="gone" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/free_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:background="@drawable/play_free_bg"
+        android:gravity="center"
+        android:text="@string/free"
+        android:textColor="@color/white"
+        android:textSize="7sp"
+        android:visibility="gone"
+        app:font_bold="true"
+        tools:ignore="SmallSp"
+        tools:visibility="visible" />
+
+    <com.hjq.shape.layout.ShapeFrameLayout
+        android:id="@+id/player_fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:shape_radius="5dp"
+        app:shape_solidColor="@color/color_393939"
+        android:visibility="gone">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/player_lav"
+            android:layout_width="21dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/episodes_play" />
+    </com.hjq.shape.layout.ShapeFrameLayout>
+
+</FrameLayout>

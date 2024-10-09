@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:background="@color/color_232323">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/balance_text_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/balance"
+            android:textColor="@color/color_999999"
+            android:textSize="16sp" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/balance_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:font_bold="true"
+            tools:text="10 Coins | 10 Bonus" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/store_cl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/fixed_gp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:constraint_referenced_ids="feedback_tv,store_hint,protocol_tv"
+                tools:visibility="visible" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/subscriptions_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:itemCount="2"
+                tools:listitem="@layout/subscriptions_item" />
+
+            <com.hjq.shape.layout.ShapeConstraintLayout
+                android:id="@+id/ep_unlock_cl"
+                android:layout_width="match_parent"
+                android:layout_height="92dp"
+                android:layout_marginHorizontal="16dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/subscriptions_rv"
+                app:shape_radius="5dp"
+                app:shape_strokeColor="@color/white"
+                app:shape_strokeSize="0.4dp"
+                tools:visibility="visible">
+
+                <com.tt.dramatime.widget.fonttext.FontTextView
+                    android:id="@+id/one_time_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="11dp"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/one_time"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:font_bold="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.tt.dramatime.widget.fonttext.FontTextView
+                    android:id="@+id/all_ep_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:font_bold="true"
+                    app:layout_constraintStart_toStartOf="@id/one_time_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/one_time_tv"
+                    tools:text="Unlock all 75 episodes" />
+
+                <com.tt.dramatime.widget.fonttext.FontTextView
+                    android:id="@+id/ep_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="11dp"
+                    android:textColor="@color/color_D6B392"
+                    android:textSize="16sp"
+                    app:font_bold="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="US$ 49.99" />
+
+                <com.tt.dramatime.widget.fonttext.FontTextView
+                    android:id="@+id/original_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:textColor="@color/color_D6B392"
+                    android:textSize="11sp"
+                    app:layout_constraintEnd_toEndOf="@id/ep_price_tv"
+                    app:layout_constraintTop_toBottomOf="@id/ep_price_tv"
+                    tools:text="US$ 59.99" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/select_iv"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/store_select_bg"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.tt.dramatime.widget.fonttext.FontTextView
+                    android:id="@+id/corner_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/vip_super_value_bg"
+                    android:gravity="center"
+                    android:paddingHorizontal="11dp"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="99% of people subscribed"
+                    tools:visibility="visible" />
+            </com.hjq.shape.layout.ShapeConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recharge_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8.5dp"
+                android:layout_marginTop="15dp"
+                app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/ep_unlock_cl"
+                app:layout_goneMarginTop="0dp"
+                app:spanCount="2"
+                tools:itemCount="4"
+                tools:listitem="@layout/recharge_item" />
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:id="@+id/feedback_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:textColor="@color/white"
+                app:font_bold="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recharge_rv"
+                tools:text="Need help? Please visit Feedback" />
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:id="@+id/store_hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="6dp"
+                android:text="@string/store_hint"
+                android:textColor="@color/color_999999"
+                android:textSize="12sp"
+                app:font_bold="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/feedback_tv" />
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:id="@+id/protocol_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="56dp"
+                android:layout_marginBottom="23dp"
+                android:textColor="@color/color_999999"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/store_hint"
+                tools:text="Terms of Service l Privacy Policy l Renewal Agreement" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
+

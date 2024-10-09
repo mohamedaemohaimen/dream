@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="303dp"
+    android:layout_height="276dp"
+    android:layout_gravity="center"
+    android:background="@drawable/vip_expired_bg">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/close_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="6dp"
+        android:padding="10dp"
+        android:src="@drawable/bonus_pop_close_ic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:textColor="@color/color_FFC48D"
+        android:textSize="22sp"
+        app:font_bold="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Weekly VIP Expired" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/desc_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/renew_privileges"
+        android:textColor="@color/color_FFC48D"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_tv" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/unlock_all_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:drawableTop="@drawable/vip_expired_unlock_ic"
+        android:drawablePadding="4dp"
+        android:text="@string/unlock_all"
+        android:textColor="@color/color_FFC48D"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@id/no_ad_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/desc_tv" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/no_ad_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:drawableTop="@drawable/vip_expired_ads_ic"
+        android:drawablePadding="4dp"
+        android:text="@string/no_ads"
+        android:textColor="@color/color_FFC48D"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@id/frame_tv"
+        app:layout_constraintStart_toEndOf="@id/unlock_all_tv"
+        app:layout_constraintTop_toTopOf="@id/unlock_all_tv" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/frame_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/vip_expired_frame_ic"
+        android:drawablePadding="4dp"
+        android:text="@string/vip_frame"
+        android:textColor="@color/color_FFC48D"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/no_ad_tv"
+        app:layout_constraintTop_toTopOf="@id/unlock_all_tv" />
+
+    <com.tt.dramatime.widget.fonttext.MyShapeTextView
+        android:id="@+id/renew_tv"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginHorizontal="23dp"
+        android:layout_marginBottom="26dp"
+        android:gravity="center"
+        android:text="@string/renew"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:shape_radius="19dp"
+        app:shape_solidGradientEndColor="@color/color_FDAF73"
+        app:shape_solidGradientOrientation="topToBottom"
+        app:shape_solidGradientStartColor="@color/color_FBE2BD"
+        app:shape_textColor="@color/color_4B2600"
+        app:stv_font_bold="true" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

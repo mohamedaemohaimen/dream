@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/episodes_ll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.tt.widget.layout.RatioFrameLayout
+        android:id="@+id/poster_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:sizeRatio="139:188">
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/poster_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:round="6dp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/label_iv"
+            android:layout_width="100dp"
+            android:layout_height="17dp"
+            android:layout_gravity="end"
+            android:scaleType="fitEnd"
+            tools:src="@drawable/red_label_rtl_bg"
+            tools:visibility="visible"
+            android:visibility="gone" />
+
+        <com.hjq.shape.layout.ShapeFrameLayout
+            android:id="@+id/more_fl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:shape_radius="6dp"
+            app:shape_solidColor="@color/black50"
+            app:shape_textColor="@color/white"
+            tools:visibility="visible">
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:drawableEnd="@drawable/arrow_right_column_more_rtl_ic"
+                android:drawablePadding="3dp"
+                android:gravity="center"
+                android:text="@string/view_more"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_10" />
+        </com.hjq.shape.layout.ShapeFrameLayout>
+
+    </com.tt.widget.layout.RatioFrameLayout>
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:lineSpacingMultiplier="1.1"
+        android:maxLines="2"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_13"
+        app:font_bold="true"
+        tools:text="Misplaced Love of what balalall balabal..." />
+
+</LinearLayout>

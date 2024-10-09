@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="report_content">
+        <item>انتهاك</item>
+        <item>محتوى مختلط</item>
+        <item>إختراق القانون</item>
+        <item>إباحية</item>
+        <item>أسباب أخرى</item>
+    </string-array>
+
+
+</resources>

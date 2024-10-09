@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 进度条的整体背景颜色 -->
+    <item android:id="@android:id/background">
+        <shape>
+            <corners android:radius="3dp" />
+            <solid android:color="@color/white20" />
+        </shape>
+    </item>
+
+
+    <!-- 未播放进度条的颜色 -->
+    <item android:id="@android:id/secondaryProgress">
+        <clip>
+            <shape>
+                <corners android:radius="3dp" />
+                <solid android:color="@color/white20" />
+            </shape>
+        </clip>
+    </item>
+
+    <!-- 已播放进度条 -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                <corners android:radius="3dp" />
+                <solid android:color="@color/white50" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>

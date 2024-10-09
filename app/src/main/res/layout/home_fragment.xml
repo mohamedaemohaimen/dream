@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/white_bg"
+    android:orientation="vertical"
+    tools:context=".ui.fragment.HomeFragment">
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/refresh_sl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srlEnableHeaderTranslationContent="false"
+        app:srlEnableLoadMore="true"
+        app:srlEnablePreviewInEditMode="false"
+        app:srlPrimaryColor="#444444">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/home_nsv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.tt.widget.layout.NestedLinearLayout
+                android:id="@+id/home_ll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:paddingTop="80dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/home_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            </com.tt.widget.layout.NestedLinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_51"
+        android:background="@drawable/home_top_bg"
+        android:paddingBottom="@dimen/dp_10"
+        app:barStyle="transparent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:leftIcon="@null">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/title_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|bottom"
+            android:layout_marginStart="22dp"
+            android:background="@drawable/drama_time_ic" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/search_iv"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end|bottom"
+            android:layout_marginEnd="80dp"
+            android:background="@drawable/home_search_ic" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/bonus_lav"
+            android:layout_width="36dp"
+            android:layout_height="31dp"
+            android:layout_gravity="end|bottom"
+            android:layout_marginEnd="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/bonus" />
+
+    </com.hjq.bar.TitleBar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/history_cl"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@drawable/home_viewing_history_bg"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:visibility="visible">
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/history_cove_iv"
+            android:layout_width="31dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="10dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:round="6dp"
+            tools:src="@color/color_999999" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/history_title_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="73dp"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:maxLines="1"
+            android:textColor="@color/color_333333"
+            app:font_bold="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/history_cove_iv"
+            app:layout_constraintTop_toTopOf="@id/history_cove_iv"
+            tools:text="The Chosen Son-in-Law" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/history_ep_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:textColor="@color/color_666666"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/history_cove_iv"
+            app:layout_constraintStart_toStartOf="@id/history_title_tv"
+            tools:text="EP.3" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            android:layout_marginEnd="26dp"
+            android:src="@drawable/home_history_play_ic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.tt.widget.layout.RatioFrameLayout
+        android:id="@+id/loading_fl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/home_loading_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:sizeRatio="375:812"
+        tools:visibility="gone" />
+
+    <include
+        android:id="@+id/error_ll"
+        layout="@layout/view_list_load_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

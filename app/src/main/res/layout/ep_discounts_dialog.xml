@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/dp_319"
+    android:layout_height="wrap_content"
+    tools:background="@color/black50"
+    android:layout_gravity="center">
+
+    <ImageView
+        android:id="@+id/content_fl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/ep_discounts_bg"
+        android:layout_marginBottom="@dimen/dp_34"
+        app:layout_constraintBottom_toBottomOf="@id/content_ll"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/content_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/title_tv"
+            android:layout_width="@dimen/dp_127"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:maxLines="1"
+            android:text="@string/limit_discounts"
+            android:textColor="@color/color_A72430"
+            android:textSize="@dimen/sp_18"
+            app:font_bold="true"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/goods_name_tv"
+            android:layout_width="@dimen/dp_240"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_22"
+            app:font_bold="true"
+            tools:text="Unlock all 75 episodes Unlock all 75 episodes Unlock all 75 episodes" />
+
+        <FrameLayout
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_width="@dimen/dp_237"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/ep_discounts_content_bg"
+                android:layout_height="match_parent"/>
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/cover_iv"
+                android:layout_width="@dimen/dp_209"
+                android:layout_height="@dimen/dp_279"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_13"
+                android:scaleType="centerCrop"
+                app:round="@dimen/dp_8"
+                tools:src="@drawable/login_bg" />
+        </FrameLayout>
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/pay_tv"
+            android:layout_width="@dimen/dp_189"
+            android:layout_height="@dimen/dp_49"
+            android:background="@drawable/ep_discounts_btn_bg"
+            android:gravity="center"
+            android:textColor="@color/color_C80012"
+            android:textSize="@dimen/sp_18"
+            android:layout_marginTop="@dimen/dp_m_25"
+            app:font_bold="true"
+            app:layout_constraintBottom_toBottomOf="@id/content_fl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="$49.99" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/count_down_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_33"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/content_ll"
+        tools:visibility="visible">
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/limit_times"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_13" />
+
+        <com.tt.dramatime.widget.fonttext.MyShapeTextView
+            android:id="@+id/minutes_tv"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:gravity="center"
+            android:text="00"
+            android:textSize="@dimen/sp_13"
+            app:shape_radius="@dimen/dp_3"
+            app:shape_solidGradientEndColor="@color/color_C42C37"
+            app:shape_solidGradientOrientation="topToBottom"
+            app:shape_solidGradientStartColor="@color/color_E77478"
+            app:shape_textColor="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="2dp"
+            android:text=":"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_13" />
+
+        <com.tt.dramatime.widget.fonttext.MyShapeTextView
+            android:id="@+id/seconds_tv"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:gravity="center"
+            android:text="00"
+            android:textSize="@dimen/sp_13"
+            app:shape_radius="@dimen/dp_3"
+            app:shape_solidGradientEndColor="@color/color_C42C37"
+            app:shape_solidGradientOrientation="topToBottom"
+            app:shape_solidGradientStartColor="@color/color_E77478"
+            app:shape_textColor="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="2dp"
+            android:text="."
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_13" />
+
+        <com.tt.dramatime.widget.fonttext.MyShapeTextView
+            android:id="@+id/milliseconds_tv"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:gravity="center"
+            android:text="00"
+            android:textSize="@dimen/sp_13"
+            app:shape_radius="@dimen/dp_3"
+            app:shape_solidGradientEndColor="@color/color_C42C37"
+            app:shape_solidGradientOrientation="topToBottom"
+            app:shape_solidGradientStartColor="@color/color_E77478"
+            app:shape_textColor="@color/white" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/close_btn"
+        android:layout_width="@dimen/dp_36"
+        android:layout_height="@dimen/dp_36"
+        android:layout_marginTop="@dimen/dp_36"
+        android:background="@drawable/dialog_grey_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/count_down_ll" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

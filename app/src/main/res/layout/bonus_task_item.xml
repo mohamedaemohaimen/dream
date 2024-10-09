@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hjq.shape.layout.ShapeConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="10dp"
+    app:shape_radius="12dp"
+    app:shape_solidColor="@color/color_F2F7F8">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/coins_iv"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:src="@drawable/wallet_coins_ic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/add_coins_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:textColor="@color/color_F5813E"
+        android:textSize="14sp"
+        app:font_bold="true"
+        app:layout_constraintBottom_toBottomOf="@id/coins_iv"
+        app:layout_constraintStart_toEndOf="@id/coins_iv"
+        app:layout_constraintTop_toTopOf="@id/coins_iv"
+        tools:text="+3 (1/5)" />
+
+    <com.tt.dramatime.widget.fonttext.FontTextView
+        android:id="@+id/task_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/coins_iv"
+        tools:text="Watch ads to get Bonus" />
+
+    <LinearLayout
+        android:id="@+id/claim_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/button_minimal_30_bg"
+        android:gravity="center"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/watch_ads_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:src="@drawable/watch_ads_ic"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/claim_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            app:font_bold="true"
+            tools:text="@string/claim" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ads_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/task_title_tv"
+        tools:listitem="@layout/ad_add_coin_item"
+        tools:visibility="visible" />
+
+</com.hjq.shape.layout.ShapeConstraintLayout>

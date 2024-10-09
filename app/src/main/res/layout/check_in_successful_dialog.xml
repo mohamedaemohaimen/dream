@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/dp_65">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/dp_283"
+        android:layout_height="@dimen/dp_328"
+        android:layout_gravity="center"
+        android:background="@drawable/check_in_success_bg">
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/add_bonus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_29"
+            android:gravity="end"
+            android:textColor="@color/color_F9B000"
+            android:textSize="@dimen/sp_30"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/check_in_btn"
+            app:layout_constraintEnd_toStartOf="@id/bonus"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="+25" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/bonus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_7"
+            android:layout_marginBottom="@dimen/dp_31"
+            android:text="@string/home_nav_bonus"
+            android:textColor="@color/color_F9B000"
+            android:textSize="@dimen/sp_22"
+            app:font_bold="true"
+            app:layout_constraintBottom_toTopOf="@id/check_in_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/add_bonus" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_152"
+            android:gravity="center"
+            android:text="@string/check_in_successful"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_22"
+            app:font_bold="true"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/close_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_99"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:padding="@dimen/dp_10"
+            android:src="@drawable/bonus_pop_close_ic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.hjq.shape.layout.ShapeLinearLayout
+            android:id="@+id/check_in_btn"
+            android:layout_width="match_parent"
+            style="@style/Button45TBStyleLR"
+            android:layout_marginHorizontal="@dimen/dp_27"
+            android:layout_marginBottom="@dimen/dp_22"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/reminder_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_13"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                tools:src="@drawable/bonus_reminder_ic" />
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:id="@+id/check_in_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ok"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_18"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </com.hjq.shape.layout.ShapeLinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

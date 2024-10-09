@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="15dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/recharge_cl"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="7.5dp"
+        android:background="@drawable/recharge_un_select_bg">
+
+        <LinearLayout
+            android:id="@+id/coins_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:id="@+id/coins_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                app:font_bold="true"
+                app:layout_constraintEnd_toStartOf="@id/coins_text_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="5000" />
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:id="@+id/coins_text_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="2dp"
+                android:text="@string/coins"
+                android:textColor="@color/color_CCCCCC"
+                app:layout_constraintBottom_toBottomOf="@id/coins_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/coins_tv" />
+        </LinearLayout>
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/bonus_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:textColor="@color/color_CCCCCC"
+            android:textSize="12sp"
+            app:font_bold="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/coins_ll"
+            tools:text="+5000 Bonus" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/money_cycle_tv"
+            android:layout_width="match_parent"
+            android:layout_height="27dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="US$49.99" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/select_iv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/store_select_bg"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/discount_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
+            android:background="@drawable/discount_bg"
+            android:gravity="center"
+            android:paddingHorizontal="6dp"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            app:font_bold="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="+100%" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

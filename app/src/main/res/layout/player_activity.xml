@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <include
+        android:id="@+id/error_ll"
+        layout="@layout/view_list_load_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/movie_loading_lav"
+        android:layout_width="51dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/head_refresh" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/player_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/guide_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/guide_lav"
+            android:layout_width="265dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/play_slide" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:text="@string/swipe_up"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/interception_drama_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black80"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/users_are_watching"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/interception_drama_vp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp" />
+
+        <com.tt.dramatime.widget.fonttext.MyShapeTextView
+            android:id="@+id/play_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_marginTop="39dp"
+            android:layout_marginBottom="13dp"
+            android:drawableStart="@drawable/interception_play_ic"
+            android:drawablePadding="8dp"
+            android:gravity="center"
+            android:paddingHorizontal="24dp"
+            android:text="@string/play"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:shape_radius="6dp"
+            app:shape_solidGradientEndColor="@color/color_C640FF"
+            app:shape_solidGradientStartColor="@color/color_23E1FF"
+            app:stv_font_bold="true" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@null"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="4dp"
+        android:src="@drawable/white_back_ic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

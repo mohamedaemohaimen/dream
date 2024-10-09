@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/recharge_head_shadow_bg"
+        app:layout_constraintTop_toTopOf="@id/discount_tv" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:layout_marginHorizontal="6dp"
+        android:layout_marginTop="9dp"
+        android:background="@drawable/recharge_head_un_select_bg"
+        app:layout_constraintTop_toTopOf="@id/discount_tv">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/coins_iv"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="14dp"
+            android:src="@drawable/three_coins_tv"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/coins_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:text="5000"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            app:font_bold="true"
+            app:layout_constraintStart_toEndOf="@id/coins_iv"
+            app:layout_constraintTop_toTopOf="@id/coins_iv" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/coins_text_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="2dp"
+            android:text="Coins"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/coins_tv"
+            app:layout_constraintStart_toEndOf="@id/coins_tv" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/bonus_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="+5000 Bonus"
+            android:textColor="@color/color_FF392B"
+            android:textSize="15sp"
+            app:font_bold="true"
+            app:layout_constraintStart_toStartOf="@id/coins_tv"
+            app:layout_constraintTop_toBottomOf="@id/coins_tv" />
+
+        <com.tt.dramatime.widget.fonttext.MyShapeTextView
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center"
+            android:minWidth="74dp"
+            android:paddingHorizontal="10dp"
+            android:text="US$49.99"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shape_radius="17dp"
+            app:shape_solidColor="@color/color_C640FF"
+            app:stv_font_bold="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/discount_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="6dp"
+        android:layout_marginStart="6dp"
+        android:background="@drawable/discount_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+100%"
+            android:textColor="@color/white"
+            android:textSize="11sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="11dp"
+            android:layout_marginHorizontal="6dp"
+            android:background="@color/white" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Limited Time：00:00:00"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:font_bold="true" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

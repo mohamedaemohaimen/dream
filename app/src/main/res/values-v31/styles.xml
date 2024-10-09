@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SplashTheme" parent="AppTheme">
+        <!-- https://www.jianshu.com/p/d0d907754603 -->
+        <!-- 窗口状态栏颜色可以设置为和背景色一致 -->
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <!-- 窗口的背景，替代启动时候出现的白屏 -->
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_logo_ic</item>
+    </style>
+</resources>

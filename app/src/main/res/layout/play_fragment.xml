@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <ImageView
+        android:id="@+id/cover_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.tencent.rtmp.ui.TXCloudVideoView
+        android:id="@+id/tcv_video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent" />
+
+    <com.tencent.rtmp.ui.TXSubtitleView
+        android:id="@+id/tx_subtitle_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.tt.dramatime.widget.subtitleview.SubtitleView
+        android:id="@+id/subtitle_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
+
+    <View
+        android:id="@+id/touch_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/player_control_gp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="back_btn,more_btn,top_mask,bottom_mask,seekbar_short_video,episodes_info_ll,ad_view_fl"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/player_top_gp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="back_btn,more_btn"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/top_mask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/player_top_mask_bg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bottom_mask"
+        android:layout_width="match_parent"
+        android:layout_height="106dp"
+        android:background="@drawable/player_bottom_mask_bg"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/seekbar_short_video"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxHeight="2dp"
+        android:minHeight="2dp"
+        android:paddingTop="100dp"
+        android:paddingBottom="10dp"
+        android:progressDrawable="@drawable/player_video_seek_bar"
+        android:thumb="@drawable/tiktok_seek_thumb"
+        app:layout_constraintBottom_toTopOf="@id/episodes_info_ll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/seekbar_lav"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginBottom="11dp"
+        android:progressDrawable="@drawable/player_video_seek_bar"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/seekbar_short_video"
+        app:layout_constraintEnd_toEndOf="@id/episodes_info_ll"
+        app:layout_constraintStart_toStartOf="@id/episodes_info_ll"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/play_loading" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ad_view_fl"
+        android:layout_width="236dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="29dp"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="0px"
+        app:layout_constraintBottom_toTopOf="@id/episodes_info_ll"
+        app:layout_constraintStart_toStartOf="@id/episodes_info_ll" />
+
+    <com.tt.dramatime.widget.fonttext.MyShapeTextView
+        android:id="@+id/tv_progress_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="125dp"
+        android:gravity="center"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="4dp"
+        android:text="00:00 / 00:00"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/episodes_info_ll"
+        app:layout_constraintStart_toStartOf="@id/episodes_info_ll"
+        app:shape_radius="4dp"
+        app:shape_solidColor="@color/black70"
+        tools:visibility="visible" />
+
+    <com.hjq.shape.layout.ShapeLinearLayout
+        android:id="@+id/episodes_info_ll"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="18dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:shape_radius="@dimen/dp_22"
+        app:shape_solidColor="@color/white20">
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/ep_current_total_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:drawableStart="@drawable/play_episodes_ic"
+            android:drawablePadding="10dp"
+            android:textColor="@color/white"
+            tools:text="EP.1/EP.80" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/ep_name_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="1"
+            android:drawablePadding="10dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            tools:text="剧集名称剧集名称剧剧集名称剧集名称剧剧集名称剧集名称剧" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/speed_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@id/back_btn"
+            app:layout_constraintTop_toBottomOf="@id/back_btn" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/episodes_unfold_ic" />
+    </com.hjq.shape.layout.ShapeLinearLayout>
+
+    <ImageView
+        android:id="@+id/pause_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/player_suspend"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/unlock_cl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black80"
+        android:focusableInTouchMode="true"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/unlock_hint_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="288dp"
+            android:text="@string/unlock_paid_content"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/unlock_fl"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginHorizontal="28dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_big_45_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/unlock_hint_tv">
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableStart="@drawable/unlock_ic"
+                android:drawablePadding="12dp"
+                android:gravity="center"
+                android:text="@string/unlock_now"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:font_bold="true" />
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/watch_unlock_cl"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginHorizontal="28dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/button_big_transparent_45_bg"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/unlock_fl"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ad_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ad_unlock_ic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/watch_unlock_tv"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:id="@+id/watch_unlock_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:font_bold="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ad_iv"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Watch 3 ads to unlock" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/watch_today_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_marginTop="-9dp"
+            android:background="@drawable/unlock_change_bg"
+            android:gravity="center"
+            android:paddingHorizontal="9dp"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:font_bold="true"
+            app:layout_constraintEnd_toEndOf="@id/watch_unlock_cl"
+            app:layout_constraintTop_toTopOf="@id/watch_unlock_cl"
+            tools:text="Change 10"
+            tools:visibility="visible" />
+
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/unlock_balance_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/color_999999"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/watch_unlock_cl"
+            tools:text="Balance：20 Coins | 50 Bounds" />
+
+        <FrameLayout
+            android:id="@+id/bonus_fl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="47dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/unlock_balance_tv">
+
+            <com.tt.dramatime.widget.fonttext.MyShapeTextView
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="18dp"
+                android:gravity="center_vertical"
+                android:paddingStart="21dp"
+                android:paddingEnd="14dp"
+                android:text="@string/free_unlock"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:shape_radius="13dp"
+                app:shape_strokeColor="@color/white50"
+                app:shape_strokeSize="0.5dp" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/bonus_lav"
+                android:layout_width="36dp"
+                android:layout_height="31dp"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/bonus" />
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/auto_play_cb"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginEnd="10dp"
+            android:visibility="gone"
+            app:buttonCompat="@drawable/checkbox_selector"
+            app:layout_constraintBottom_toBottomOf="@id/auto_play_tv"
+            app:layout_constraintEnd_toStartOf="@id/auto_play_tv"
+            app:layout_constraintTop_toTopOf="@id/auto_play_tv" />
+
+        <com.tt.dramatime.widget.fonttext.FontTextView
+            android:id="@+id/auto_play_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="78dp"
+            android:text="Autoplay next episode"
+            android:textColor="@color/color_999999"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:background="@null"
+        android:paddingHorizontal="16dp"
+        android:src="@drawable/white_back_ic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/more_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/player_more_ic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/back_btn" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="98dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/watermark_ic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

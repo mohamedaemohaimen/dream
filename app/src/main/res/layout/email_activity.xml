@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/email_cl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mail_bg">
+
+    <com.tt.widget.layout.RatioFrameLayout
+        android:id="@+id/email_rfl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_3"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/mail_balloon_rtl_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:sizeRatio="372:544">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_117"
+                android:layout_marginEnd="110dp"
+                android:text="@string/enter_email"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_21"
+                app:font_bold="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.4" />
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:id="@+id/coins_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_34"
+                android:drawableStart="@drawable/coins_66_ic"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:text="+100"
+                android:textColor="@color/color_F5813E"
+                android:textSize="@dimen/sp_16"
+                app:font_bold="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/guideline" />
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:id="@+id/email_hint_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_34"
+                android:layout_marginTop="15dp"
+                android:lineSpacingExtra="0dp"
+                android:text="@string/fill_in_email"
+                android:textColor="@color/color_060606"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintTop_toBottomOf="@id/coins_tv" />
+
+            <com.hjq.shape.layout.ShapeLinearLayout
+                android:id="@+id/email_ll"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginHorizontal="@dimen/dp_34"
+                android:layout_marginTop="@dimen/dp_22"
+                android:gravity="center_vertical"
+                app:layout_constraintTop_toBottomOf="@id/email_hint_tv"
+                app:shape_radius="@dimen/dp_5"
+                app:shape_solidColor="@color/color_F5F5F5"
+                app:shape_strokeColor="@color/color_DCDCDC"
+                app:shape_strokeSize="@dimen/dp_0_5">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_12"
+                    android:src="@drawable/email_ic" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="@dimen/dp_18"
+                    android:background="@color/color_ABABAB" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/email_et"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:hint="@string/enter_email_hint"
+                    android:importantForAutofill="no"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/color_ABABAB"
+                    android:textSize="@dimen/sp_15" />
+
+                <com.tt.dramatime.widget.fonttext.FontTextView
+                    android:id="@+id/input_operation_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/dp_12"
+                    android:gravity="center_vertical" />
+            </com.hjq.shape.layout.ShapeLinearLayout>
+
+            <com.tt.dramatime.widget.fonttext.FontTextView
+                android:id="@+id/email_input_hint_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_34"
+                android:layout_marginTop="6dp"
+                android:textColor="@color/color_D80606"
+                android:textSize="@dimen/sp_12"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/email_ll"
+                tools:text="Please enter your email address"
+                tools:visibility="visible" />
+
+            <com.tt.dramatime.widget.fonttext.MyShapeTextView
+                android:id="@+id/verify_tv"
+                style="@style/Button45Style"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="@dimen/dp_56"
+                android:text="@string/confirm"
+                app:layout_constraintTop_toBottomOf="@id/email_ll" />
+
+            <com.hjq.shape.layout.ShapeRecyclerView
+                android:id="@+id/email_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_29"
+                android:layout_marginTop="@dimen/dp_45"
+                android:paddingVertical="@dimen/dp_7"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toTopOf="@id/email_ll"
+                app:shape_radius="@dimen/dp_5"
+                app:shape_shadowColor="@color/black15"
+                app:shape_shadowOffsetX="0dp"
+                app:shape_shadowOffsetY="@dimen/dp_3"
+                app:shape_shadowSize="@dimen/dp_5"
+                app:shape_solidColor="@color/white"
+                tools:itemCount="4"
+                tools:listitem="@layout/email_item"
+                tools:visibility="gone" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.tt.widget.layout.RatioFrameLayout>
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/title_bar"
+        style="@style/TitleBarStyle"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

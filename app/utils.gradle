@@ -1,0 +1,10 @@
+ext.getArtifactName = {
+    defaultConfig ->
+        def pProjectNane = project.name
+        def pAppId = defaultConfig.applicationId
+        def pName = "DramaTime"
+        def pVer = android.defaultConfig.versionName
+        def pCode = android.defaultConfig.versionCode
+        def pTime = new Date().format("MMddHHmm")
+        return pName + "_" + pVer + "_" + pCode + "_" + pTime
+}
